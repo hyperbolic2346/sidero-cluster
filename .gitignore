@@ -1,0 +1,9 @@
+.vscode/
+talosconfig
+kubeconfig
+.talosconfig.yaml
+.kubeconfig.yaml
+/controlplan.yaml
+/worker.yaml
+flux.agekey
+.decrypted~

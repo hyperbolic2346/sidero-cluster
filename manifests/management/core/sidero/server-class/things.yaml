@@ -1,0 +1,13 @@
+---
+apiVersion: metal.sidero.dev/v1alpha1
+kind: ServerClass
+metadata:
+  name: things
+spec:
+  qualifiers:
+    system:
+      - productName: SYS-628TR-DTR-02-LC019
+  configPatches:
+    - op: replace
+      path: /machine/install/disk
+      value: /dev/sda

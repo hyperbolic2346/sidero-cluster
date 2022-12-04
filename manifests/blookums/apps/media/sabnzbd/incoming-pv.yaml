@@ -1,0 +1,60 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: incoming-sabnzbd
+spec:
+  storageClassName: ""
+  claimRef:
+    name: incoming-sabnzbd
+    namespace: media
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: ${SECRET_FILESERV_INCOMING_PATH}
+    server: ${SECRET_FILESERV_IP}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: incoming-sabnzbd
+  namespace: media
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Ti
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: incoming-movies-sabnzbd
+spec:
+  storageClassName: ""
+  claimRef:
+    name: incoming-movies-sabnzbd
+    namespace: media
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: ${SECRET_FILESERV_INCOMING_MOVIES_PATH}
+    server: ${SECRET_FILESERV_IP}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: incoming-movies-sabnzbd
+  namespace: media
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Ti

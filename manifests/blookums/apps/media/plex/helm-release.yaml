@@ -1,0 +1,62 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex
+  namespace: media
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: plex
+      version: 6.4.3
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: ghcr.io/k8s-at-home/plex
+      tag: v1.22.3.4392-d7c624def
+    env:
+      TZ: America/New_York
+    service:
+      main:
+        primary: true
+        ports:
+          http:
+            port: 32400
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+    persistence:
+      config:
+        enabled: true
+        storageClass: ceph-hdd
+      movies:
+        enabled: true
+        type: pvc
+        existingClaim: movies
+      tv:
+        enabled: true
+        type: pvc
+        existingClaim: tv
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+                - key: speed
+                  operator: In
+                  values:
+                    - fast
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 1000Mi
+      limits:
+        memory: 24000Mi

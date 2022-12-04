@@ -1,0 +1,31 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: blookums-apps
+  namespace: flux-system
+spec:
+  kubeConfig:
+    secretRef:
+      name: blookums-kubeconfig
+  interval: 10m0s
+  dependsOn:
+    - name: blookums-core
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  path: ./manifests/blookums/apps
+  prune: true
+  validation: client
+  postBuild:
+    substitute: {}
+    substituteFrom:
+      - kind: Secret
+        name: cluster-secrets-blookums
+      - kind: ConfigMap
+        name: cluster-settings-blookums
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age

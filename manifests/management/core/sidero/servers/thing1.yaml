@@ -1,0 +1,20 @@
+---
+apiVersion: metal.sidero.dev/v1alpha1
+kind: Server
+metadata:
+  labels:
+    master-node: 'true'
+  name: 00000000-0000-0000-0000-0cc47a187714
+spec:
+  pxeBootAlways: true
+  accepted: true
+  bmc:
+    endpoint: 10.0.15.11
+  cpu:
+    manufacturer: Intel
+    version: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+  hostname: thing1
+  system:
+    manufacturer: Supermicro
+    productName: SYS-628TR-DTR-02-LC019
+    serialNumber: S178810X5626992
