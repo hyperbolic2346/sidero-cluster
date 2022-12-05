@@ -6,14 +6,6 @@ metadata:
 spec:
   configPatches:
     - op: add
-      path: /machine/network
-      value:
-        interfaces:
-          - interface: en0
-            dhcp: true
-            vip:
-              ip: 10.0.14.2
-    - op: add
       path: /machine/kubelet/extraArgs
       value:
         rotate-server-certificates: true

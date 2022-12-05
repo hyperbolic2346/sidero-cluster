@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: incoming-sabnzbd
 spec:
-  storageClassName: ""
+  storageClassName: ''
   claimRef:
     name: incoming-sabnzbd
     namespace: media
@@ -22,7 +22,7 @@ metadata:
   name: incoming-sabnzbd
   namespace: media
 spec:
-  storageClassName: ""
+  storageClassName: ''
   accessModes:
     - ReadWriteMany
   resources:
@@ -34,7 +34,7 @@ kind: PersistentVolume
 metadata:
   name: incoming-movies-sabnzbd
 spec:
-  storageClassName: ""
+  storageClassName: ''
   claimRef:
     name: incoming-movies-sabnzbd
     namespace: media
@@ -52,7 +52,7 @@ metadata:
   name: incoming-movies-sabnzbd
   namespace: media
 spec:
-  storageClassName: ""
+  storageClassName: ''
   accessModes:
     - ReadWriteMany
   resources:

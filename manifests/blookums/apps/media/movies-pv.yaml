@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: movies
 spec:
-  storageClassName: ""
+  storageClassName: ''
   claimRef:
     name: movies
     namespace: media
@@ -22,7 +22,7 @@ metadata:
   name: movies
   namespace: media
 spec:
-  storageClassName: ""
+  storageClassName: ''
   accessModes:
     - ReadWriteMany
   resources:
