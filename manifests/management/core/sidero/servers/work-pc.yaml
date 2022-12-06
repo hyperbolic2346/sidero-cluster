@@ -4,17 +4,15 @@ kind: Server
 metadata:
   labels:
     master-node: 'true'
-  name: 00000000-0000-0000-0000-0cc47a52b624
+  name: 44454c4c-3700-1058-8030-c4c04f465131
 spec:
   pxeBootAlways: true
   accepted: true
-  bmc:
-    endpoint: 10.0.15.10
   cpu:
     manufacturer: Intel
     version: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
-  hostname: thing2
+  hostname: work-pc
   system:
-    manufacturer: Supermicro
-    productName: SYS-628TR-DTR-02-LC019
-    serialNumber: S178810X5626992
+    manufacturer: Dell Inc.
+    productName: SPrecision WorkStation T3500
+    version: D7X0FQ1
