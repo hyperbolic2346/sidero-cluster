@@ -5,8 +5,9 @@ metadata:
   name: work-pc
 spec:
   qualifiers:
-    system:
-      - productName: asdassdfgs
+    systemInformation:
+      - manufacturer: Dell Inc.
+        productName: Precision WorkStation T3500
   configPatches:
     - op: replace
       path: /machine/install/disk

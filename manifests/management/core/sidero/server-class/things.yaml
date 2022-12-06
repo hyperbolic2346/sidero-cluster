@@ -5,7 +5,7 @@ metadata:
   name: things
 spec:
   qualifiers:
-    system:
+    systemInformation:
       - productName: SYS-628TR-DTR-02-LC019
   configPatches:
     - op: replace
