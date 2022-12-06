@@ -5,3 +5,4 @@ resources:
   - defaults.yaml
   - things.yaml
   - work-pc.yaml
+  - master.yaml
