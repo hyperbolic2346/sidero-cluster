@@ -16,3 +16,15 @@ spec:
     manufacturer: Dell Inc.
     productName: SPrecision WorkStation T3500
     version: D7X0FQ1
+  configPatches:
+    - op: replace
+      path: /machine/install/disk
+      value: /dev/sdb
+    - op: add
+      path: /machine/network
+      value:
+        interfaces:
+          - interface: enp5s0
+            dhcp: true
+            vip:
+              ip: 10.0.14.2

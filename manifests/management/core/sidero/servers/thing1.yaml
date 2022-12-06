@@ -18,3 +18,15 @@ spec:
     manufacturer: Supermicro
     productName: SYS-628TR-DTR-02-LC019
     serialNumber: S178810X5626992
+  configPatches:
+    - op: replace
+      path: /machine/install/disk
+      value: /dev/sda
+    - op: add
+      path: /machine/network
+      value:
+        interfaces:
+          - interface: en0
+            dhcp: true
+            vip:
+              ip: 10.0.14.2
