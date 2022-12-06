@@ -7,7 +7,7 @@ spec:
   qualifiers:
     systemInformation:
       - manufacturer: Dell Inc.
-        productName: Precision WorkStation T3500
+        productName: SPrecision WorkStation T3500
   configPatches:
     - op: replace
       path: /machine/install/disk
