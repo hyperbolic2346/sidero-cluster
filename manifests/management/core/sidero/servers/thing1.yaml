@@ -22,11 +22,3 @@ spec:
     - op: replace
       path: /machine/install/disk
       value: /dev/sda
-    - op: add
-      path: /machine/network
-      value:
-        interfaces:
-          - interface: en0
-            dhcp: true
-            vip:
-              ip: 10.0.14.5
