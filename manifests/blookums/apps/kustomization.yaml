@@ -4,7 +4,6 @@ kind: Kustomization
 bases:
   - ../../_base/apps/
 resources:
-  - home
   - media
   - monitoring
   - networking
