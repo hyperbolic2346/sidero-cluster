@@ -43,7 +43,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path: ${SECRET_FILESERV_INCOMING_MOVIES_PATH}
+    path: ${SECRET_FILESERV_INCOMING_MOVIE_PATH}
     server: ${SECRET_FILESERV_IP}
 ---
 kind: PersistentVolumeClaim
