@@ -22,6 +22,10 @@ spec:
     controlplane:
       generateType: controlplane
       talosVersion: v1.2.7
+      configPatches:
+        - op: add
+          path: /cluster/allowSchedulingOnControlPlanes
+          value: true
   infrastructureTemplate:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha3
     kind: MetalMachineTemplate
