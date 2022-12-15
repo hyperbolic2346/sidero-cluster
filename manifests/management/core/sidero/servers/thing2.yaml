@@ -26,7 +26,7 @@ spec:
       path: /machine/network
       value:
         interfaces:
-          - interface: en0
+          - interface: eth0
             dhcp: true
             vip:
               ip: 10.0.14.5
