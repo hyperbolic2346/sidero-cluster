@@ -31,7 +31,7 @@ spec:
     - op: replace
       path: /machine/certSANs
       value:
-        = 10.0.14.5
+        - 10.0.14.5
     - op: add
       path: /cluster/allowSchedulingOnControlPlanes
       value: true
