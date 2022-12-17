@@ -30,3 +30,10 @@ spec:
             dhcp: true
             vip:
               ip: 10.0.14.5
+    - op: replace
+      path: /machine/certSANs
+      value:
+        = 10.0.14.5
+    - op: add
+      path: /cluster/allowSchedulingOnControlPlanes
+      value: true
