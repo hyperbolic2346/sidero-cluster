@@ -8,4 +8,4 @@ resources:
   - media.yaml
   - networking.yaml
   - oliver.yaml
-  - velero
+  - velero.yaml
