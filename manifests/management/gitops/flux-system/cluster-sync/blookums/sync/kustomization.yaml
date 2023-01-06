@@ -5,3 +5,5 @@ resources:
   - apps.yaml
   - core.yaml
   - crds.yaml
+  - metallb.yaml
+  - metallb-config.yaml

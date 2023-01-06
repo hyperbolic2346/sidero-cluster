@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: networking-system-metallb-config
+  name: blookums-metallb
   namespace: flux-system
 spec:
   kubeConfig:
@@ -13,12 +13,10 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./manifests/blookums/apps/networking/metallb/config
+  path: ./manifests/blookums/networking/metallb/base
   prune: false
   validation: client
   wait: true
-  dependsOn:
-    - name: networking-system-metallb
   postBuild:
     substitute: {}
     substituteFrom:
