@@ -5,12 +5,17 @@ metadata:
   name: networking-system-metallb
   namespace: flux-system
 spec:
-  path: ./manifests/blookums/networking/metallb/base
+  kubeConfig:
+    secretRef:
+      name: blookums-kubeconfig
+  interval: 10m0s
   sourceRef:
     kind: GitRepository
     name: flux-system
-  interval: 30m
+    namespace: flux-system
+  path: ./manifests/blookums/networking/metallb/base
   prune: false
+  validation: client
   wait: true
   postBuild:
     substitute: {}
