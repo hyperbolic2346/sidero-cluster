@@ -16,7 +16,6 @@ spec:
   path: ./manifests/blookums/apps/networking/metallb/config
   prune: false
   validation: client
-  wait: true
   dependsOn:
     - name: blookums-metallb
   postBuild:

@@ -16,7 +16,6 @@ spec:
   path: ./manifests/blookums/apps/networking/metallb/base
   prune: false
   validation: client
-  wait: true
   postBuild:
     substitute: {}
     substituteFrom:
