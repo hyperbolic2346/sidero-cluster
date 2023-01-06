@@ -13,7 +13,7 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  path: ./manifests/blookums/networking/metallb/base
+  path: ./manifests/blookums/apps/networking/metallb/base
   prune: false
   validation: client
   wait: true
