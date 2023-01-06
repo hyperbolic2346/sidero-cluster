@@ -55,9 +55,9 @@ spec:
           aws_access_key_id = ${SECRET_AWS_ACCESS_KEY_ID}
           aws_secret_access_key = ${SECRET_AWS_ACCESS_KEY_SECRET}
     snapshotsEnabled: true
-    deployRestic: true
+    deployNodeAgent: true
     installCRDs: true
-    restic:
+    nodeAgent:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
       resources:
