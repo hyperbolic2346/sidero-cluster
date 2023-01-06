@@ -8,13 +8,15 @@ spec:
   interval: 5m
   chart:
     spec:
+      dependsOn:
+        - name: 
       # renovate: registryUrl=https://metallb.github.io/metallb
       chart: metallb
       version: 0.13.7
       sourceRef:
         kind: HelmRepository
         name: metallb-charts
-        namespace: networking
+        namespace: flux-system
       interval: 5m
   values:
     prometheusRule:
