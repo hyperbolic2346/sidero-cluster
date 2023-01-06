@@ -25,8 +25,7 @@ spec:
         serviceMonitor:
           enabled: true
       image:
-        registry: quay.io
-        repository: metallb/controller
+        repository: quay.io/metallb/controller
         tag: v0.13.7
     speaker:
       metrics:
