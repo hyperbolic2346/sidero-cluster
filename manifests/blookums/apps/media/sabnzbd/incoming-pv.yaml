@@ -23,7 +23,7 @@ metadata:
   namespace: media
 spec:
   storageClassName: ""
-  volumneName: incoming-sabnzbd
+  volumeName: incoming-sabnzbd
   accessModes:
     - ReadWriteMany
   resources:
@@ -54,7 +54,7 @@ metadata:
   namespace: media
 spec:
   storageClassName: ""
-  volumneName: incoming-sabnzbd
+  volumeName: incoming-sabnzbd
   accessModes:
     - ReadWriteMany
   resources:
