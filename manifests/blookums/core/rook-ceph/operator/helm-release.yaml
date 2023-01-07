@@ -20,7 +20,6 @@ spec:
       enabled: true
     monitoring:
       enabled: true
-    pspEnable: true
     resources:
       requests:
         cpu: 400m
