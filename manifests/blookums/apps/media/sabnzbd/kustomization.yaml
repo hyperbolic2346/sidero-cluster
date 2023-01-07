@@ -3,4 +3,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - helm-release.yaml
-  - incoming-pv.yaml
+  - incoming-sabnzbd-pv.yaml
+  - incoming-sabnzbd-pvc.yaml
+  - incoming-movies-sabnzbd-pv.yaml
+  - incoming-movies-sabnzbd-pvc.yaml

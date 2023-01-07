@@ -1,0 +1,14 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: incoming-movies-sabnzbd
+  namespace: media
+spec:
+  storageClassName: ""
+  volumeName: incoming-movies-sabnzbd
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Ti

@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: incoming-sabnzbd
+spec:
+  storageClassName: ""
+  claimRef:
+    name: incoming-sabnzbd
+    namespace: media
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: ${SECRET_FILESERV_INCOMING_PATH}
+    server: ${SECRET_FILESERV_IP}
