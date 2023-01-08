@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: incoming-mp3-sabnzbd
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: ${SECRET_FILESERV_INCOMING_MP3_PATH}
+    server: ${SECRET_FILESERV_IP}

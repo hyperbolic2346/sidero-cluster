@@ -7,3 +7,5 @@ resources:
   - incoming-sabnzbd-pvc.yaml
   - incoming-movies-sabnzbd-pv.yaml
   - incoming-movies-sabnzbd-pvc.yaml
+  - incoming-mp3-sabnzbd-pv.yaml
+  - incoming-mp3-sabnzbd-pvc.yaml
