@@ -5,7 +5,6 @@ metadata:
   name: movies
 spec:
   storageClassName: ''
-  volumeName: movies
   capacity:
     storage: 1Ti
   accessModes:
