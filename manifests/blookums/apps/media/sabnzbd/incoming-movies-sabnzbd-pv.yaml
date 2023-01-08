@@ -5,9 +5,7 @@ metadata:
   name: incoming-movies-sabnzbd
 spec:
   storageClassName: ""
-  claimRef:
-    name: incoming-movies-sabnzbd
-    namespace: media
+  volumeName: incoming-movies-sabnzbd
   capacity:
     storage: 1Ti
   accessModes:

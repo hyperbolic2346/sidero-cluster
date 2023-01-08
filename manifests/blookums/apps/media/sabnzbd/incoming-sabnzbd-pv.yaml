@@ -5,9 +5,7 @@ metadata:
   name: incoming-sabnzbd
 spec:
   storageClassName: ""
-  claimRef:
-    name: incoming-sabnzbd
-    namespace: media
+  volumeName: incoming-sabnzbd
   capacity:
     storage: 1Ti
   accessModes:
