@@ -34,5 +34,5 @@ spec:
           enabled: true
       image:
         registry: quay.io
-        repository: metallb/speaker
+        repository: quay.io/metallb/speaker
         tag: v0.13.7
