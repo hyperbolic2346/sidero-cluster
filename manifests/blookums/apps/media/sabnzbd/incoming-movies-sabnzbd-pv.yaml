@@ -5,7 +5,6 @@ metadata:
   name: incoming-movies-sabnzbd
 spec:
   storageClassName: ""
-  volumeName: incoming-movies-sabnzbd
   capacity:
     storage: 1Ti
   accessModes:
