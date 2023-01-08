@@ -27,7 +27,7 @@ spec:
       value:
         interfaces:
           - deviceSelector:
-              hardwareAddr: "e4:1d:2d:2b:61:30"
+              hardwareAddr: e4:1d:2d:2b:61:30
             dhcp: true
             vip:
               ip: 10.0.14.5
