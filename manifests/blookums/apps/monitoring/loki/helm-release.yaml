@@ -18,10 +18,6 @@ spec:
       interval: 5m
   values:
     loki:
-      config:
-        table_manager:
-          retention_deletes_enabled: true
-          retention_period: 336h
       persistence:
         enabled: true
         storageClassName: ceph-hdd
