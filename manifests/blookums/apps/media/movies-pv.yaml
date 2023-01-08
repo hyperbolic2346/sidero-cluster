@@ -5,9 +5,7 @@ metadata:
   name: movies
 spec:
   storageClassName: ''
-  claimRef:
-    name: movies
-    namespace: media
+  volumeName: movies
   capacity:
     storage: 1Ti
   accessModes:
@@ -23,6 +21,7 @@ metadata:
   namespace: media
 spec:
   storageClassName: ''
+  volumeName: movies
   accessModes:
     - ReadWriteMany
   resources:
