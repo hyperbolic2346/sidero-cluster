@@ -35,3 +35,7 @@ spec:
     - op: add
       path: /cluster/allowSchedulingOnControlPlanes
       value: true
+    - op: add
+      path: /machine/sysctls
+      value:
+        vm.nr_hugepages: 1024
