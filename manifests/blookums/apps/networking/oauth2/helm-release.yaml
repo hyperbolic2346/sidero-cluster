@@ -1,0 +1,62 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: oauth2-proxy
+  namespace: kube-system
+spec:
+  releaseName: oauth2-proxy
+  interval: 10m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: oauth2-proxy
+      version: 5.0.7
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+  values:
+    image:
+      repository: "quay.io/oauth2-proxy/oauth2-proxy"
+      tag: "v7.4.0"
+    replicaCount: 2
+
+    ingress:
+      enabled: true
+      path: /oauth2
+      hosts:
+      - auth.${SECRET_DOMAIN}
+
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+
+      tls:
+      - secretName: oauth-cert
+        hosts:
+        - auth.${SECRET_DOMAIN}
+
+    extraArgs:
+      whitelist-domain: ".${SECRET_DOMAIN}"
+      cookie-domain: ".${SECRET_DOMAIN}"
+      provider: google
+
+    config:
+      existingSecret: oauth2-google
+      configFile: |-
+        email_domains = []
+        upstreams = [ "file:///dev/null" ]
+
+    authenticatedEmailsFile:
+      enabled: true
+      restricted_access: ${SECRET_VALID_EMAILS}
+
+    resources:
+      limits:
+        cpu: 100m
+        memory: 300Mi
+      requests:
+        cpu: 100m
+        memory: 300Mi
