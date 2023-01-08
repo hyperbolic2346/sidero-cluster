@@ -51,7 +51,8 @@ spec:
 
     authenticatedEmailsFile:
       enabled: true
-      restricted_access: ${SECRET_VALID_EMAILS}
+      restricted_access: |- 
+        ${SECRET_VALID_EMAILS}
 
     resources:
       limits:
