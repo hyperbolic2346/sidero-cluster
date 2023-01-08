@@ -52,7 +52,9 @@ spec:
     authenticatedEmailsFile:
       enabled: true
       restricted_access: |-
-        ${SECRET_VALID_EMAILS}
+        ${SECRET_OAUTH_EMAIL0}
+        ${SECRET_OAUTH_EMAIL1}
+        ${SECRET_OAUTH_EMAIL2}
 
     resources:
       limits:
