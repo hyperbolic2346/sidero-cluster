@@ -4,4 +4,4 @@ kind: Namespace
 metadata:
   name: rook-ceph
   labels:
-    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/warn: privileged
