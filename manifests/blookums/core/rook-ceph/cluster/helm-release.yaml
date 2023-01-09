@@ -17,6 +17,10 @@ spec:
         namespace: flux-system
   dependsOn:
     - name: rook-ceph
+    - name: cert-manager
+      namespace: cert-manager
+    - name: ingress-nginx
+      namespace: networking
   values:
     monitoring:
       enabled: true
