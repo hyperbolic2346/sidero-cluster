@@ -6,7 +6,7 @@ metadata:
   namespace: home
 spec:
   dependsOn:
-    - name: rook-ceph
+    - name: rook-ceph-cluster
       namespace: rook-ceph
   interval: 10m
   chart:
