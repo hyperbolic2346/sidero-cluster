@@ -28,11 +28,6 @@ spec:
     envFrom:
       - secretRef:
           name: frigate-secret
-    configmap:
-      config:
-        enabled: true
-        data:
-          config.yml:
     ingress:
       main:
         enabled: true
