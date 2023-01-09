@@ -9,6 +9,7 @@ spec:
   interval: 10m
   dependsOn:
     - name: rook-ceph
+      namespace: rook-ceph
   chart:
     spec:
       # renovate: registryUrl=https://nextcloud.github.io/helm/
