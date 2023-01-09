@@ -21,7 +21,7 @@ spec:
   controlPlaneConfig:
     controlplane:
       generateType: controlplane
-      talosVersion: v1.2.7
+      talosVersion: v1.3.0
       configPatches:
         - op: add
           path: /cluster/allowSchedulingOnControlPlanes
