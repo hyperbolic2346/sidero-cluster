@@ -16,6 +16,8 @@ spec:
         kind: HelmRepository
         name: k8s-at-home-charts
         namespace: flux-system
+  dependsOn:
+    - name: rook-ceph
   values:
     ingress:
       main:

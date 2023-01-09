@@ -5,6 +5,8 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
+  dependsOn:
+    - name: rook-ceph
   interval: 5m
   chart:
     spec:

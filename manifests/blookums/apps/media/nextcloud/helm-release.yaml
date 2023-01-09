@@ -7,6 +7,8 @@ metadata:
 spec:
   releaseName: nextcloud
   interval: 10m
+  dependsOn:
+    - name: rook-ceph
   chart:
     spec:
       # renovate: registryUrl=https://nextcloud.github.io/helm/

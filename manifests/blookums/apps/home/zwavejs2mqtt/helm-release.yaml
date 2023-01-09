@@ -5,6 +5,8 @@ metadata:
   name: zwavejs2mqtt
   namespace: home
 spec:
+  dependsOn:
+    - name: rook-ceph
   interval: 10m
   chart:
     spec:

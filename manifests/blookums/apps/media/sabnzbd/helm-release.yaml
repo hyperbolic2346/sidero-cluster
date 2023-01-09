@@ -5,6 +5,8 @@ metadata:
   name: sabnzbd
   namespace: media
 spec:
+  dependsOn:
+    - name: rook-ceph
   releaseName: sabnzbd
   interval: 10m
   chart:

@@ -5,6 +5,8 @@ metadata:
   name: sonarr
   namespace: media
 spec:
+  dependsOn:
+    - name: rook-ceph
   releaseName: sonarr
   interval: 10m
   chart:

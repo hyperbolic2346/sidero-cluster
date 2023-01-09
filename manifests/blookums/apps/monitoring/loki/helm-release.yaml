@@ -5,6 +5,8 @@ metadata:
   name: loki
   namespace: monitoring
 spec:
+  dependsOn:
+    - name: rook-ceph
   interval: 5m
   chart:
     spec:
