@@ -7,7 +7,6 @@ metadata:
 spec:
   releaseName: oauth2-proxy
   interval: 10m
-  kubeVersion: 1.25.5
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
@@ -18,6 +17,7 @@ spec:
         name: oauth2-charts
         namespace: flux-system
   values:
+    kubeVersion: 1.25.5
     image:
       repository: "quay.io/oauth2-proxy/oauth2-proxy"
       tag: "v7.4.0"
