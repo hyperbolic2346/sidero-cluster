@@ -78,7 +78,7 @@ kubectl apply --kustomize=./manifests/management/gitops/flux-system
 
 ```bash
 # fetch kubeconfig
-kubectl get secret -n flux-system metal-01-kubeconfig -o yaml -o jsonpath='{.data.value}' | base64 -d > kubeconfig
+kubectl get secret -n flux-system blookums-kubeconfig -o yaml -o jsonpath='{.data.value}' | base64 -d > kubeconfig
 
 # merge kubeconfig files
 cp ~/.kube/config ~/.kube/config.bak
@@ -89,5 +89,11 @@ mv /tmp/kubeconfig ~/.kube/config
 ## Tidy up context names
 ```bash
 kubectx management=admin@management
-kubectx metal-01=metal-01-admin@metal-01
+kubectx blookums=admin@blookums
+```
+
+## Get talosconfig
+
+```bash
+kubectl --context=sidero-demo get secret blookums-talosconfig -o jsonpath='{.data.talosconfig}' | base64 -d > blookums-talosconfig
 ```
