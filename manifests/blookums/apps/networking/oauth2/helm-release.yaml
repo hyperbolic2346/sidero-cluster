@@ -7,6 +7,7 @@ metadata:
 spec:
   releaseName: oauth2-proxy
   interval: 10m
+  kubeVersion: 1.25.5
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
