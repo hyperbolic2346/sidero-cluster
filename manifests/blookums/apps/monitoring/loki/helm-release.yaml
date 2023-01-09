@@ -20,10 +20,15 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    loki:
+    write:
       persistence:
-        enabled: true
         storageClassName: ceph-hdd
         size: 25Gi
-      serviceMonitor:
-        enabled: true
+    read:
+      persistence:
+        storageClassName: ceph-hdd
+        size: 25Gi
+    singleBinary:
+      persistence:
+        storageClassName: ceph-hdd
+        size: 25Gi
