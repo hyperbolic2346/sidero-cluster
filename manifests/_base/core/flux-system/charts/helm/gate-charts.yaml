@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 60m
-  url: https://github.com/hyperbolic2346/gate-charts
+  url: https://hyperbolic2346.github.io/gate-charts
   timeout: 3m
