@@ -29,7 +29,7 @@ spec:
         requests:
           memory: 256Mi
           cpu: 100m
-      cluster-issuer: letsencrypt-production
+      clusterissuer: letsencrypt-production
       hostname: gate.${SECRET_DOMAIN}
     motion:
       image: ${SECRET_DOCKER_REPO}/motion:latest
