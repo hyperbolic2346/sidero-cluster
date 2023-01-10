@@ -89,7 +89,7 @@ spec:
             kubernetes.io/ingress.class: nginx
             nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.kube-system.svc.cluster.local/oauth2/auth
             nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
-            cert-manager.io/cluster-issuer: letsencrypt-prod
+            cert-manager.io/cluster-issuer: letsencrypt-production
           hosts:
             - host: hass-code.${SECRET_DOMAIN}
               paths:
