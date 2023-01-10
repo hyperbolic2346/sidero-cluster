@@ -3,6 +3,9 @@ apiVersion: metal.sidero.dev/v1alpha1
 kind: Server
 metadata:
   name: 00000000-0000-0000-0000-ac1f6b0a4b72
+  labels:
+    worker-node: 'true'
+
 spec:
   pxeBootAlways: true
   bmc:

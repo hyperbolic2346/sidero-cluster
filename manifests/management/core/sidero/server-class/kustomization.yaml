@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - defaults.yaml
   - master.yaml
+  - worker.yaml
