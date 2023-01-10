@@ -8,7 +8,7 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: gate_chart
+      chart: gate-chart
       version: '0.2'
       sourceRef:
         kind: HelmRepository
