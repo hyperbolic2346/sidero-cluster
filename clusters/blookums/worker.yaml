@@ -17,7 +17,7 @@ metadata:
   namespace: flux-system
 spec:
   clusterName: blookums
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
   template:
