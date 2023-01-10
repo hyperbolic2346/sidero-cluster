@@ -1,0 +1,32 @@
+---
+apiVersion: metal.sidero.dev/v1alpha1
+kind: Server
+metadata:
+  name: 00000000-0000-0000-0000-ac1f6b0a4b72
+spec:
+  pxeBootAlways: true
+  accepted: true
+  bmc:
+    endpoint: 10.0.15.13
+  cpu:
+    manufacturer: Intel
+    version: Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz
+  hostname: dogbert
+  system:
+    manufacturer: Supermicro
+    productName: Super Server
+  configPatches:
+    - op: replace
+      path: /machine/install/disk
+      value: /dev/sda
+    - op: add
+      path: /machine/network
+      value:
+        interfaces:
+          - deviceSelector:
+              hardwareAddr: ac:1f:6b:0a:4b:72
+            dhcp: true
+    - op: add
+      path: /machine/sysctls
+      value:
+        vm.nr_hugepages: 1024
