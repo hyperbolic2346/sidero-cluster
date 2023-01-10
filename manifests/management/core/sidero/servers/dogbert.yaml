@@ -5,6 +5,10 @@ metadata:
   name: 00000000-0000-0000-0000-ac1f6b0a4b72
 spec:
   pxeBootAlways: true
+  bmc:
+    endpoint: 10.0.15.13
+    user: sidero
+    pass: ${SECRET_DOGBERT_IPMI_PASSWORD}
   cpu:
     manufacturer: Intel
     version: Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz
