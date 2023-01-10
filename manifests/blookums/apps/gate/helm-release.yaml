@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: gate_chart
-      version: 0.2
+      version: '0.2'
       sourceRef:
         kind: HelmRepository
         name: gate-charts
