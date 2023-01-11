@@ -5,9 +5,9 @@ metadata:
   name: 00000000-0000-0000-0000-ac1f6b0a4b72
   labels:
     worker-node: 'true'
-
 spec:
   pxeBootAlways: true
+  accepted: true
   bmc:
     endpoint: 10.0.15.13
     user: sidero
