@@ -22,7 +22,7 @@ spec:
   configPatches:
     - op: replace
       path: /machine/install/disk
-      value: /dev/sda
+      value: /dev/nvme0n1
     - op: add
       path: /machine/network
       value:
