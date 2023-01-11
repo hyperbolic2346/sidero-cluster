@@ -16,12 +16,12 @@ spec:
         namespace: flux-system
   values:
     celery:
-      image: ${SECRET_DOCKER_REPO}/celery_motion:latest
+      image: ${SECRET_DOCKER_USER}/celery_motion:latest
       persistence:
         enabled: true
         existingClaim: security-camera
     gate:
-      image: ${SECRET_DOCKER_REPO}/gate:latest
+      image: ${SECRET_DOCKER_USER}/gate:latest
       persistence:
         existingClaim: gate
         securityClaim: security-camera
@@ -32,7 +32,7 @@ spec:
       clusterissuer: letsencrypt-production
       hostname: gate.${SECRET_DOMAIN}
     motion:
-      image: ${SECRET_DOCKER_REPO}/motion:latest
+      image: ${SECRET_DOCKER_USER}/motion:latest
       motionNodePort: 9081
       persistence:
         enabled: true
