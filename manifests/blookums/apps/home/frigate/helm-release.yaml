@@ -20,6 +20,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    configmap:
+      config:
+        enabled: false
     image:
       repository: blakeblackshear/frigate
       tag: 0.10.1-amd64
