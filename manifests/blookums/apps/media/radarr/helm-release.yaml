@@ -20,6 +20,18 @@ spec:
     - name: rook-ceph-cluster
       namespace: rook-ceph
   values:
+    initContainers:
+      update-volume-permission:
+        command:
+          - sh
+          - '-c'
+          - 'chown -R 568:568 /config'
+        image: busybox
+        securityContext:
+          runAsUser: 0
+        volumeMounts:
+          - mountPath: /config
+            name: config
     ingress:
       main:
         enabled: true
