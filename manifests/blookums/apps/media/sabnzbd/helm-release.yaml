@@ -28,6 +28,8 @@ spec:
       tag: v3.7.0
       pullPolicy: IfNotPresent
 
+    securityContext:
+      runAsUser: 568
     env:
       TZ: America/New_York
     ingress:
