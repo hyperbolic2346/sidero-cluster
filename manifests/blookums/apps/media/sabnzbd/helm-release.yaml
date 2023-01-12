@@ -30,6 +30,7 @@ spec:
 
     securityContext:
       runAsUser: 568
+      fsGroup: 568
     env:
       TZ: America/New_York
     ingress:
