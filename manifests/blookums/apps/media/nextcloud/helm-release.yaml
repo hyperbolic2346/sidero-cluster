@@ -20,6 +20,8 @@ spec:
         name: nextcloud-charts
         namespace: flux-system
   values:
+    image:
+      tag: 25.0.2
     ingress:
       enabled: true
       tls:
