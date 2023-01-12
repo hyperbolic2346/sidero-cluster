@@ -25,9 +25,9 @@ spec:
       tag: 0.10.1-amd64
     env:
       TZ: America/New_York
-    envFrom:
-      - secretRef:
-          name: frigate-secret
+      FRIGATE_MQTT_HOST: ${SECRET_MQTT_HOST}
+      FRIGATE_MQTT_USER: ${SECRET_MQTT_USERNAME}
+      FRIGATE_MQTT_PW: ${SECRET_MQTT_PASSWORD}
     ingress:
       main:
         enabled: true
@@ -50,8 +50,7 @@ spec:
         enabled: true
         type: configMap
         name: frigate-configmap
-        subPath: config.yaml
-        mountPath: /config/config.yml
+        mountPath: /config
         readOnly: true
       data:
         enabled: true
