@@ -28,7 +28,7 @@ spec:
       dashboard:
         annotations:
           nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
-          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.kube-system.svc.cluster.local/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
           cert-manager.io/cluster-issuer: letsencrypt-production
         host:
           name: rook.${SECRET_DOMAIN}

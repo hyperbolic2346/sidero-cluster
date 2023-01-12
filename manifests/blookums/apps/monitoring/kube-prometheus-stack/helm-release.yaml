@@ -82,7 +82,7 @@ spec:
         ingressClassName: nginx
         annotations:
           kubernetes.io/tls-acme: 'true'
-          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.kube-system.svc.cluster.local/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
           nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
           cert-manager.io/cluster-issuer: letsencrypt-production
         hosts:
@@ -135,7 +135,7 @@ spec:
         ingressClassName: nginx
         annotations:
           kubernetes.io/tls-acme: 'true'
-          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.kube-system.svc.cluster.local/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
           nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
           cert-manager.io/cluster-issuer: letsencrypt-production
         hosts:
