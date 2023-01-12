@@ -6,4 +6,3 @@ metadata:
   labels:
     pod-security.kubernetes.io/warn: privileged
     pod-security.kubernetes.io/enforce: privileged
-  
