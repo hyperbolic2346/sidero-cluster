@@ -6,6 +6,7 @@ metadata:
   labels:
     master-node: 'true'
 spec:
+  pxeBootAlways: true
   accepted: true
   bmc:
     endpoint: 10.0.15.14
