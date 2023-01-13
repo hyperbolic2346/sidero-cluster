@@ -19,7 +19,7 @@ spec:
   system:
     manufacturer: Dell Inc.
     productName: PowerEdge R530
-    version: 4KWCC42
+    version: 418GC42
   configPatches:
     - op: replace
       path: /machine/install/disk
