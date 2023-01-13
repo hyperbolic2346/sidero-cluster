@@ -8,17 +8,17 @@ metadata:
 spec:
   accepted: true
   bmc:
-    endpoint: 10.0.15.14
+    endpoint: 10.0.15.15
     user: sidero
-    pass: ${SECRET_CATBERT_IPMI_PASSWORD}
+    pass: ${SECRET_ALICE_IPMI_PASSWORD}
   cpu:
     manufacturer: Intel
-    version: Intel(R) Xeon(R) CPU E3-1240 v6 @ 3.70GHz
-  hostname: catbert
+    version: Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz
+  hostname: alice
   system:
     manufacturer: Dell Inc.
-    productName: PowerEdge R330
-    version: 7FJMHL2
+    skuNumber: BMMB92S
+    version: PowerEdge R710
   configPatches:
     - op: replace
       path: /machine/install/disk
@@ -28,7 +28,7 @@ spec:
       value:
         interfaces:
           - deviceSelector:
-              hardwareAddr: e4:1d:2d:22:b8:d0
+              hardwareAddr: e4:1d:2d:7e:af:f0
             dhcp: true
             vip:
               ip: 10.0.14.5
