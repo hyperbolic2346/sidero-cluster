@@ -3,7 +3,7 @@ apiVersion: metal.sidero.dev/v1alpha1
 kind: Server
 metadata:
   labels:
-    master-node: 'true'
+    worker-node: 'true'
   name: 00000000-0000-0000-0000-0cc47a187714
 spec:
   accepted: true
@@ -28,15 +28,6 @@ spec:
           - deviceSelector:
               hardwareAddr: e4:1d:2d:2c:8b:30
             dhcp: true
-            vip:
-              ip: 10.0.14.5
-    - op: replace
-      path: /machine/certSANs
-      value:
-        - 10.0.14.5
-    - op: add
-      path: /cluster/allowSchedulingOnControlPlanes
-      value: true
     - op: add
       path: /machine/sysctls
       value:
