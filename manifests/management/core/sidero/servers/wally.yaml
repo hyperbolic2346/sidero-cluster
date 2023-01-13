@@ -1,0 +1,37 @@
+---
+apiVersion: metal.sidero.dev/v1alpha1
+kind: Server
+metadata:
+  name: 00000000-0000-0000-0000-ac1f6b0a4b72
+  labels:
+    worker-node: 'true'
+spec:
+  pxeBootAlways: true
+  accepted: true
+  bmc:
+    endpoint: 10.0.15.16
+    user: sidero
+    pass: ${SECRET_WALLY_IPMI_PASSWORD}
+  cpu:
+    manufacturer: Intel
+    version: Intel(R) Xeon(R) CPU E5-2623 v3 @ 3.00GHz
+  hostname: wally
+  system:
+    manufacturer: Dell Inc.
+    productName: PowerEdge R530
+    version: 4KWCC42
+  configPatches:
+    - op: replace
+      path: /machine/install/disk
+      value: /dev/sdb1
+    - op: add
+      path: /machine/network
+      value:
+        interfaces:
+          - deviceSelector:
+              hardwareAddr: e4:1d:2d:2c:84:e0
+            dhcp: true
+    - op: add
+      path: /machine/sysctls
+      value:
+        vm.nr_hugepages: 1024
