@@ -41,8 +41,8 @@ spec:
       backupsDirectory: /config/backups
       backupsMaxAge: 3 # 3 days
       serviceType: LoadBalancer
-      restartCron: "0 5 * * *"
-      updateCron: "*/15 * * * *"
+      restartCron: 0 5 * * *
+      updateCron: '*/15 * * * *'
       timezone: America/New_York
 
     persistence:
