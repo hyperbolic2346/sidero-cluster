@@ -2,7 +2,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - alice.yaml
+  - catbert.yaml
   - dogbert.yaml
+  - phil.yaml
   - thing1.yaml
   - thing2.yaml
+  - wally.yaml
   - work-pc.yaml
