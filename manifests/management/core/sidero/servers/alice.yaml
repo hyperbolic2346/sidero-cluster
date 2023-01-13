@@ -2,7 +2,7 @@
 apiVersion: metal.sidero.dev/v1alpha1
 kind: Server
 metadata:
-  name: 4c4c4544-0046-4a10-804d-b7c04f484c32
+  name: 4c4c4544-004d-4d10-8042-c2c04f393253
   labels:
     master-node: 'true'
 spec:
