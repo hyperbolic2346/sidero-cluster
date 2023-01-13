@@ -49,16 +49,10 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/serial/by-id/usb-0658_0200-if00
+        hostPathType: CharDevice
 
     podAnnotations:
       backup.velero.io/backup-volumes: config
 
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-            - matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                    - zwave-controller
+    nodeSelector:
+      aeotec.feature.node.kubernetes.io/zwave: "true"
