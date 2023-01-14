@@ -33,8 +33,8 @@ spec:
           - mountPath: /config
             name: config
     image:
-      repository: ghcr.io/k8s-at-home/plex
-      tag: v1.22.3.4392-d7c624def
+      repository: ghcr.io/onedr0p/plex
+      tag: 1.30.0.6486-629d58034@sha256:b3e3a2a305443f243643553161cff639f3dcc74349595884ac9c77cf6bb24068
     env:
       TZ: America/New_York
     service:
@@ -59,16 +59,7 @@ spec:
         existingClaim: tv
     podAnnotations:
       backup.velero.io/backup-volumes: config
-    affinity:
-      nodeAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-                - key: speed
-                  operator: In
-                  values:
-                    - fast
+
     resources:
       requests:
         cpu: 1000m
