@@ -50,7 +50,7 @@ spec:
       config:
         enabled: true
         storageClass: ceph-hdd
-        size: 1TB
+        size: 1Ti
       movies:
         enabled: true
         type: pvc
