@@ -33,6 +33,5 @@ spec:
         serviceMonitor:
           enabled: true
       image:
-        registry: quay.io
         repository: quay.io/metallb/speaker
         tag: v0.13.7
