@@ -7,5 +7,6 @@ resources:
   - sabnzbd
   - sonarr
   - plex
+  - photoprism
   - movies-pv.yaml
   - tv-pv.yaml
