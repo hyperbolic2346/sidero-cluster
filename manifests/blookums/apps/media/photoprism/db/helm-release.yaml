@@ -32,6 +32,7 @@ spec:
       database: photoprism
       username: photoprism
       password: ${SECRET_PHOTOPRISM_MARIADB_PW}
+      rootPassword: ${SECRET_PHOTOPRISM_MARIADB_ROOT_PW}
     primary:
       podAnnotations:
         backup.velero.io/backup-volumes: data
