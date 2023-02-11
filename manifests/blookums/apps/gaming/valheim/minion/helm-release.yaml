@@ -41,6 +41,7 @@ spec:
       backupsDirectory: /config/backups
       backupsMaxAge: 3 # 3 days
       serviceType: LoadBalancer
+      externalTrafficPolicy: Local
 
     persistence:
       config:
