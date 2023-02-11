@@ -1,0 +1,56 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mariadb
+  namespace: media
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: mariadb
+      version: 11.4.6
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: flux-system
+      interval: 5m
+  targetNamespace: media
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    fullnameOverride: photoprism-mariadb
+    image:
+      repository: bitnami/mariadb
+      tag: 10.10.3
+    auth:
+      database: photoprism
+      username: photoprism
+      password: ${SECRET_PHOTOPRISM_MARIADB_PW}
+    primary:
+      podAnnotations:
+        backup.velero.io/backup-volumes: data
+      persistence:
+        enabled: true
+        storageClass: ceph-ssd
+      livenessProbe:
+        enabled: true
+        initialDelaySeconds: 900
+      readinessProbe:
+        enabled: true
+        initialDelaySeconds: 900
+    volumePermissions:
+      enabled: true
+      image:
+        repository: bitnami/bitnami-shell
+        tag: 11
+    metrics:
+      enabled: true
+      image:
+        repository: bitnami/mysqld-exporter
+        tag: 0.14.0
