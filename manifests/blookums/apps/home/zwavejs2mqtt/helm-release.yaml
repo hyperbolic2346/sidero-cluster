@@ -55,4 +55,4 @@ spec:
       backup.velero.io/backup-volumes: config
 
     nodeSelector:
-      aeotec.feature.node.kubernetes.io/zwave: "true"
+      aeotec.feature.node.kubernetes.io/zwave: 'true'

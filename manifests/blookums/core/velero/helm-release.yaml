@@ -32,12 +32,12 @@ spec:
           region: ${SECRET_AWS_REGION}
       resticTimeout: 6h
     initContainers:
-    - name: velero-plugin-for-aws
-      image: velero/velero-plugin-for-aws:v1.6.1
-      imagePullPolicy: IfNotPresent
-      volumeMounts:
-      - mountPath: /target
-        name: plugins
+      - name: velero-plugin-for-aws
+        image: velero/velero-plugin-for-aws:v1.6.1
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /target
+            name: plugins
     resources:
       requests:
         memory: 300Mi
@@ -68,6 +68,6 @@ spec:
           memory: 2000Mi
     schedules:
       daily-backup:
-        schedule: "0 6 * * *"
+        schedule: 0 6 * * *
         template:
-          ttl: "120h"
+          ttl: 120h

@@ -5,7 +5,7 @@ metadata:
   name: incoming-sabnzbd
   namespace: media
 spec:
-  storageClassName: ""
+  storageClassName: ''
   volumeName: incoming-sabnzbd
   accessModes:
     - ReadWriteMany

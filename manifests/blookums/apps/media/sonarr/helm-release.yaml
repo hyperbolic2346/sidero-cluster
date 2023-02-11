@@ -28,8 +28,8 @@ spec:
       update-volume-permission:
         command:
           - sh
-          - '-c'
-          - 'chown -R 568:568 /config'
+          - -c
+          - chown -R 568:568 /config
         image: busybox
         securityContext:
           runAsUser: 0

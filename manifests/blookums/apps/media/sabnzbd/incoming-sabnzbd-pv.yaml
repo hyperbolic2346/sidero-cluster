@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: incoming-sabnzbd
 spec:
-  storageClassName: ""
+  storageClassName: ''
   capacity:
     storage: 1Ti
   accessModes:

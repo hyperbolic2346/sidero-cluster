@@ -20,18 +20,18 @@ spec:
       # -- image repository
       repository: photoprism/photoprism
       # -- image tag
-      tag: "221118-jammy"
+      tag: 221118-jammy
       # -- image pull policy
       pullPolicy: IfNotPresent
 
     # -- environment variables. See [image docs](https://docs.photoprism.org/getting-started/config-options/) for more details.
     # @default -- See below
     env:
-      TZ: "America/New_York"
+      TZ: America/New_York
       PHOTOPRISM_STORAGE_PATH: /photoprism/storage
       PHOTOPRISM_ORIGINALS_PATH: /photoprism/originals
       PHOTOPRISM_ADMIN_PASSWORD: ${SECRET_PROTOPRISM_ADMIN_PW}
-      PHOTOPRISM_AUTH_MODE: "password"
+      PHOTOPRISM_AUTH_MODE: password
       PHOTOPRISM_ORIGINALS_LIMIT: -1
       PHOTOPRISM_RESOLUTION_LIMIT: -1
       PHOTOPRISM_SITE_URL: https://photos.${SECRET_DOMAIN}
@@ -51,11 +51,11 @@ spec:
       main:
         enabled: true
         annotations:
-          kubernetes.io/tls-acme: "true"
-          kubernetes.io/ingress.class: "nginx"
-          nginx.ingress.kubernetes.io/proxy-body-size: "0"
-          nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-          nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+          kubernetes.io/tls-acme: 'true'
+          kubernetes.io/ingress.class: nginx
+          nginx.ingress.kubernetes.io/proxy-body-size: '0'
+          nginx.ingress.kubernetes.io/proxy-read-timeout: '600'
+          nginx.ingress.kubernetes.io/proxy-send-timeout: '600'
           cert-manager.io/cluster-issuer: letsencrypt-production
         path: /
         hosts:
@@ -83,15 +83,15 @@ spec:
         enabled: true
         mountPath: /photoprism/storage
         size: 50Ti
-        storageClass: "ceph-ssd"
+        storageClass: ceph-ssd
         retain: true
         accessMode: ReadWriteOnce
 
       originals:
         enabled: true
-        mountPath: "/photoprism/originals"
+        mountPath: /photoprism/originals
         size: 500Ti
-        storageClass: "ceph-hdd"
+        storageClass: ceph-hdd
         retain: true
         accessMode: ReadWriteOnce
 
@@ -109,6 +109,6 @@ spec:
       primary:
         persistence:
           enabled: true
-          storageClass: "ceph-ssd"
+          storageClass: ceph-ssd
           retain: true
           size: 50Gi
