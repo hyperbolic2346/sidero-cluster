@@ -28,7 +28,6 @@ spec:
               id: ${SECRET_BOTKUBE_DISCORD_CHANNEL_ID}
           botID: ${SECRET_BOTKUBE_DISCORD_BOT_ID}
           token: ${SECRET_BOTKUBE_DISCORD_TOKEN}
-      existingSecretName: "botkube-communications"
     settings:
       clustername: sidero
     executors:
