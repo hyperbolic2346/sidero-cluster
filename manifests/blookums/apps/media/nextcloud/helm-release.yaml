@@ -89,11 +89,11 @@ spec:
           mountPath: /dev/hugepages
     resources:
       requests:
-        cpu: 500m
-        memory: 1Gi
+        cpu: 1000m
+        memory: 2Gi
         hugepages-2Mi: 250Mi
       limits:
-        cpu: 1000m
+        cpu: 2000m
         memory: 5Gi
         hugepages-2Mi: 250Mi
     nginx:
