@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - bitnami-charts.yaml
   - bjw-s-charts.yaml
+  - botkube-charts.yaml
   - factorio-charts.yaml
   - gate-charts.yaml
   - grafana-charts.yaml
