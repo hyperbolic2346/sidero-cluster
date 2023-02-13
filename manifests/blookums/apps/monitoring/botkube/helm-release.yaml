@@ -25,6 +25,9 @@ spec:
           enabled: true
           channels:
             default:
+              bindings:
+                executors:
+                  - kubectl-read-only
               id: ${SECRET_BOTKUBE_DISCORD_CHANNEL_ID}
           botID: ${SECRET_BOTKUBE_DISCORD_BOT_ID}
           token: ${SECRET_BOTKUBE_DISCORD_TOKEN}
@@ -36,6 +39,11 @@ spec:
           enabled: true
     serviceMonitor:
       enabled: true
+    actions:
+      describe-created-resource:
+        enabled: false
+      show-logs-on-error:
+        enabled: true
     sources:
       crds:
         displayName: CRDS
