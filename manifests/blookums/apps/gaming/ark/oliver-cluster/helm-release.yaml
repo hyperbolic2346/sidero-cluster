@@ -10,9 +10,10 @@ spec:
   chart:
     spec:
       chart: charts/ark-cluster
+      version: 0.1.10
       sourceRef:
-        kind: GitRepository
-        name: k8s-cluster
+        kind: HelmRepository
+        name: ark-server-charts
         namespace: flux-system
   values:
     nameOverride: ''
