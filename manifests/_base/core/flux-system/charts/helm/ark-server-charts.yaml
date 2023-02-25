@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 60m
-  url: https://github.com/DrPsychick/ark-server-charts/
+  url: https://DrPsychick.github.io/ark-server-charts
   timeout: 3m
