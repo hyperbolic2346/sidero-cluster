@@ -305,7 +305,7 @@ spec:
       game:
         accessModes:
           - ReadWriteMany
-        size: 30Gi
+        size: 60Gi
         annotations: {}
         # mountPath is used regardless if `persistence` is enabled
         # this is the mount point in the pod image
@@ -359,10 +359,10 @@ spec:
     # Startup and Liveness probe values
     # Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
     startupProbe:
-      # 120s + 60*10s = 720s max
-      initialDelaySeconds: 120
+      # 30s + 240*30s = 120m30s max
+      initialDelaySeconds: 30
       failureThreshold: 240
-      periodSeconds: 20
+      periodSeconds: 30
       successThreshold: 1
       timeoutSeconds: 1
     livenessProbe:
