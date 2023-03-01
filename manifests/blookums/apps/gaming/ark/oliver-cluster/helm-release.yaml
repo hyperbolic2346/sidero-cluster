@@ -290,10 +290,11 @@ spec:
       rcon: 32330
 
     service:
-      # enable a service per server
       enabled: true
+      externalTrafficPolicy: Local
+      type: LoadBalancer
       # Enable metallb shared ip
-      metallb: true
+      metallb_shared_ip: true
 
     # Enable persistence using Persistent Volume Claims
     # ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
