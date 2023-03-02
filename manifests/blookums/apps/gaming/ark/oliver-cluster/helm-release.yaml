@@ -23,7 +23,8 @@ spec:
     nodeSelector: {}
     affinity: {}
     tolerations: []
-    securityContext: {}
+    securityContext:
+      fsGroup: 1000
     # need to adjust image...
     #  runAsUser: 1000
     #  fsGroup: 1000
@@ -205,7 +206,7 @@ spec:
         ports:
           queryudp: 27017
           gameudp: 7880
-          rcon: 32330
+          rcon: 32331
         resources:
           limits:
             cpu: 4
