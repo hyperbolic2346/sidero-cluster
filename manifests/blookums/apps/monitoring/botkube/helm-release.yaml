@@ -51,6 +51,8 @@ spec:
           namespaces:
             include:
               - all
+            exclude:
+              - monitoring
           events:
             - create
             - delete
