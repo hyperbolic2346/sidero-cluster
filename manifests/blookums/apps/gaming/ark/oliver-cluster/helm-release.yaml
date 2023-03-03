@@ -361,9 +361,9 @@ spec:
     # Startup and Liveness probe values
     # Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
     startupProbe:
-      # 30s + 240*30s = 120m30s max
+      # 30s + 500*30s = 250m30s max
       initialDelaySeconds: 30
-      failureThreshold: 240
+      failureThreshold: 500
       periodSeconds: 30
       successThreshold: 1
       timeoutSeconds: 1
