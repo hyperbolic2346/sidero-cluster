@@ -32,7 +32,7 @@ spec:
           botID: ${SECRET_BOTKUBE_DISCORD_BOT_ID}
           token: ${SECRET_BOTKUBE_DISCORD_TOKEN}
     settings:
-      clustername: blookums
+      clusterName: blookums
     executors:
       kubectl-read-only:
         kubectl:
