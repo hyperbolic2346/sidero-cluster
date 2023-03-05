@@ -22,13 +22,13 @@ spec:
   values:
     write:
       persistence:
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         size: 25Gi
     read:
       persistence:
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         size: 25Gi
     singleBinary:
       persistence:
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         size: 25Gi

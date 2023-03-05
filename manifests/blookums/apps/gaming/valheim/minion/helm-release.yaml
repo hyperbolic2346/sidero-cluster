@@ -47,7 +47,7 @@ spec:
       config:
         enabled: true
         size: 10Gi
-        storageClassName: ceph-ssd
+        storageClassName: ceph-ssd-xfs
 
     podAnnotations:
       backup.velero.io/backup-volumes: config

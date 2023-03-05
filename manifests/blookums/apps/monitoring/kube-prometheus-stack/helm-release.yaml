@@ -95,7 +95,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: ceph-hdd
+              storageClassName: ceph-hdd-xfs
               resources:
                 requests:
                   storage: 10Gi

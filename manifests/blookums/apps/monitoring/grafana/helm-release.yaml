@@ -132,7 +132,7 @@ spec:
             - grafana.${SECRET_DOMAIN}
     persistence:
       enabled: true
-      storageClassName: ceph-hdd
+      storageClassName: ceph-hdd-xfs
       size: 10Gi
       accessModes:
         - ReadWriteOnce
