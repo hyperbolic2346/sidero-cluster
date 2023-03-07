@@ -160,7 +160,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              storageClassName: ceph-hdd
+              storageClassName: ceph-hdd-xfs
               resources:
                 requests:
                   storage: 50Gi
