@@ -26,7 +26,7 @@ spec:
     cleanupOnFail: true
   values:
     image:
-      repository: SECRET_DOCKER_REPO/sandstorm
+      repository: ${SECRET_DOCKER_REPO}/sandstorm
       tag: latest
 
     env:
