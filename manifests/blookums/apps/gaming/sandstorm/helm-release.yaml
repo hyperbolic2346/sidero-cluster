@@ -26,8 +26,8 @@ spec:
     cleanupOnFail: true
   values:
     image:
-      repository: ${SECRET_DOCKER_REPO}/sandstorm
-      tag: latest
+      repository: knobby/sandstorm
+      tag: v2
 
     env:
       TZ: America/New_York
