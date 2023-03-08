@@ -43,10 +43,14 @@ spec:
     service:
       main:
         ports:
+          http:
+            enabled: false
           insurg-query:
+            enabled: true
             port: 27131
             protocol: UDP
           insurg-main-udp:
+            enabled: true
             port: 27102
             protocol: UDP
         type: LoadBalancer
