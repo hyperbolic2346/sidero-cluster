@@ -56,9 +56,9 @@ spec:
         type: LoadBalancer
 
     startupProbe:
-      # 15s + 20*15s = 5m max
+      # 15s + 100*15s = 1500s max
       initialDelaySeconds: 10
-      failureThreshold: 20
+      failureThreshold: 100
       periodSeconds: 15
       successThreshold: 1
       timeoutSeconds: 1
