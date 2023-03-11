@@ -57,12 +57,11 @@ spec:
 
     probes:
       startup:
-        enabled: true
-        spec:
-          initialDelaySeconds: 10
-          periodSeconds: 15
-          timeoutSeconds: 1
-          failureThreshold: 100
+        enabled: false
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
 
     resources:
       requests:
