@@ -55,13 +55,14 @@ spec:
             protocol: UDP
         type: LoadBalancer
 
-    startupProbe:
-      # 15s + 100*15s = 1500s max
-      initialDelaySeconds: 10
-      failureThreshold: 100
-      periodSeconds: 15
-      successThreshold: 1
-      timeoutSeconds: 1
+    probes:
+      startup:
+        enabled: true
+        spec:
+          initialDelaySeconds: 10
+          periodSeconds: 15
+          timeoutSeconds: 1
+          failureThreshold: 100
 
     resources:
       requests:
