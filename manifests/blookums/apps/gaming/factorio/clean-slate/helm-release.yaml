@@ -138,7 +138,7 @@ spec:
 
     # Password and port for the rcon service
     rcon:
-      password: ${SECRET_GAME_SERVER_CONSOLE_PW}
+      password: ${SECRET_GAME_SERVER_CONSOLE_LONG_PW}
       port: 27015
 
     map_gen_settings:
