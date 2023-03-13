@@ -38,7 +38,7 @@ spec:
         backup.velero.io/backup-volumes: data
       persistence:
         enabled: true
-        storageClass: ceph-ssd
+        storageClass: ceph-ssd-xfs
       livenessProbe:
         enabled: true
         initialDelaySeconds: 900

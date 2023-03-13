@@ -85,7 +85,7 @@ spec:
         enabled: true
         mountPath: /photoprism/storage
         size: 50Ti
-        storageClass: ceph-ssd
+        storageClass: ceph-ssd-xfs
         retain: true
         accessMode: ReadWriteOnce
 
@@ -93,24 +93,6 @@ spec:
         enabled: true
         mountPath: /photoprism/originals
         size: 500Ti
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         retain: true
         accessMode: ReadWriteOnce
-
-    # -- Enable and configure mariadb database subchart under this key.
-    #    For more options see [mariadb chart documentation](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
-    # @default -- See values.yaml
-    mariadb:
-      enabled: true
-      architecture: standalone
-      auth:
-        database: photoprism
-        username: photoprism
-        password: ${SECRET_PHOTOPRISM_MARIADB_PW}
-        rootPassword: photoprism
-      primary:
-        persistence:
-          enabled: true
-          storageClass: ceph-ssd
-          retain: true
-          size: 50Gi
