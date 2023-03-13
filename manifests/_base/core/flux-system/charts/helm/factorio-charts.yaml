@@ -5,6 +5,6 @@ metadata:
   name: factorio-charts
   namespace: flux-system
 spec:
-  interval: 10m
+  interval: 60m
   url: https://sqljames.github.io/factorio-server-charts
   timeout: 3m
