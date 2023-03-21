@@ -20,6 +20,14 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    loki:
+      structuredConfig:
+        auth_enabled: false
+        common:
+          path_prefix: /var/loki
+          replication_factor: 3
+          storage:
+            type: local
     write:
       persistence:
         storageClass: ceph-hdd-xfs
