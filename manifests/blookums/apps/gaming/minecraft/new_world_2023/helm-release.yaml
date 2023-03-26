@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: newworld2023
-  namespace: minecraft
+  namespace: gaming
 spec:
   releaseName: newworld2023
   interval: 10m
