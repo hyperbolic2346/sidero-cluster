@@ -26,8 +26,8 @@ spec:
         memory: 12Gi
         cpu: 1500m
       limits:
-         memory: 16Gi
-         cpu: 5000m
+        memory: 16Gi
+        cpu: 5000m
 
     securityContext:
       runAsUser: 1000
@@ -52,11 +52,11 @@ spec:
 
     minecraftServer:
       # This must be overridden, since we can't accept this for the user.
-      eula: "TRUE"
+      eula: 'TRUE'
       # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
-      version: "LATEST"
+      version: LATEST
       # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA"
-      type: "PAPER"
+      type: PAPER
       # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
       forgeVersion:
       # If type is set to SPONGEVANILLA, this sets the version
@@ -76,9 +76,9 @@ spec:
       # One of: peaceful, easy, normal, and hard
       difficulty: normal
       # A comma-separated list of player names to whitelist.
-      whitelist: "hyperbolic2346,minionmcmuffin"
+      whitelist: hyperbolic2346,minionmcmuffin
       # A comma-separated list of player names who should be admins.
-      ops: "hyperbolic2346"
+      ops: hyperbolic2346
       # A server icon URL for server listings. Auto-scaled and transcoded.
       icon:
       # Max connected players.
@@ -114,7 +114,7 @@ spec:
       # One of: creative, survival, adventure, spectator
       gameMode: survival
       # Message of the Day
-      motd: "Welcome to Oliver's 2023 Paper server!"
+      motd: Welcome to Oliver's 2023 Paper server!
       # If true, enable player-vs-player damage.
       pvp: false
       # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
@@ -122,7 +122,7 @@ spec:
       # When levelType == FLAT or CUSTOMIZED, this can be used to further customize map generation.
       # ref: https://hub.docker.com/r/itzg/minecraft-server/
       generatorSettings:
-      worldSaveName: "oliver"
+      worldSaveName: oliver
       # If set, this URL will be downloaded at startup and used as a starting point
       downloadWorldUrl:
       # force re-download of server file
@@ -136,10 +136,10 @@ spec:
       # If you adjust this, you may need to adjust resources.requests above to match.
       memory: 12G
       # General JVM options to be passed to the Minecraft server invocation
-      jvmOpts: ""
+      jvmOpts: ''
       # Options like -X that need to proceed general JVM options
-      jvmXXOpts: ""
-      #"-XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseLargePages -XX:LargePageSizeInBytes=2m"
+      jvmXXOpts: ''
+      # "-XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseLargePages -XX:LargePageSizeInBytes=2m"
       serviceAnnotations: {}
       serviceType: LoadBalancer
       ## Set the port used if the serviceType is NodePort
@@ -150,7 +150,7 @@ spec:
       externalTrafficPolicy: Local
       externalIPs:
 
-    
+
       rcon:
         # If you enable this, make SURE to change your password below.
         enabled: true
@@ -161,7 +161,7 @@ spec:
         # loadBalancerSourceRanges: []
         ## Set the externalTrafficPolicy in the Service to either Cluster or Local
         externalTrafficPolicy: Local
-    
+
       extraPorts:
         - name: newdynmap
           containerPort: 8123
@@ -170,7 +170,7 @@ spec:
             enabled: true
             annotations: {}
             type: ClusterIP
-            loadBalancerIP: ""
+            loadBalancerIP: ''
             loadBalancerSourceRanges: []
             # externalTrafficPolicy: Cluster
             port: 8123
@@ -189,19 +189,19 @@ spec:
               - secretName: dynmap-tls
                 hosts:
                   - dynmap.${SECRET_DOMAIN}
-        
+
       query:
         # If you enable this, your server will be "published" to Gamespy
         enabled: false
         port: 25565
-    
+
     ## Additional minecraft container environment variables
     ##
-    extraEnv: 
+    extraEnv:
       USE_AIKAR_FLAGS: true
       OVERRIDE_SERVER_PROPERTIES: true
       SPAWN_PROTECTION: 0
-    
+
     persistence:
       ## minecraft data Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
@@ -210,10 +210,9 @@ spec:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      storageClass:  ceph-ssd-xfs
+      storageClass: ceph-ssd-xfs
       dataDir:
         # Set this to false if you don't care to persist state between restarts.
         enabled: true
         # existingClaim: nil
         Size: 100Gi
-
