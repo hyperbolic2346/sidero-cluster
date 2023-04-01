@@ -34,7 +34,7 @@ spec:
       fsGroup: 2000
 
     livenessProbe:
-      initialDelaySeconds: 90
+      initialDelaySeconds: 30
       periodSeconds: 5
       failureThreshold: 60
       successThreshold: 1
