@@ -27,11 +27,6 @@ spec:
       # Overrides the image tag whose default is the chart appVersion.
       tag: 1.1.76
 
-    # Security options the operator container should run with
-    securityContext:
-      runAsUser: 1000
-      fsGroup: 2000
-
     service:
       type: LoadBalancer
       port: 34197
