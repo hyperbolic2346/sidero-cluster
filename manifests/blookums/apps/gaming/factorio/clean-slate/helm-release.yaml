@@ -72,7 +72,37 @@ spec:
       load_latest_save: true
       # Location of the configuration files that are generated
       config_path: /srv
+    ## @param account.accountSecret Existing secret containing a valid factorio.com username and either a password or a token (or both)
+    ## @param account.username Factorio.com username, ignored if `account.accountSecret` is set
+    ## @param account.password Factorio.com password, ignored if `account.accountSecret` is set
+    ## @param account.token Factorio.com token, ignored if `account.accountSecret` is set
+    account:
+      # Existing secret containing a valid factorio.com username and either a password or a token
+      # Example:
+      #
+      # apiVersion: v1
+      # kind: Secret
+      # metadata:
+      #   name: account-secret
+      # data:
+      #   username: <username in base64>
+      #   password: <password in base64>
+      #
+      # accountSecret: account-secret
+      accountSecret: ''
+      # Your factorio.com login credentials. Required for games with visibility public
+      username: ${SECRET_FACTORIO_USER}
+      password: ''
+      # Authentication token. May be used instead of password above.
+      token: ${SECRET_FACTORIO_TOKEN}
 
+    ## @param serverPassword.passwordSecret Existing Secret containing a `game_password` data entry
+    ## @param serverPassword.game_password Password required to log into the factorio server. Ignored if `serverPassword.passwordSecret` is set
+    serverPassword:
+      # password required to log into the factorio server
+      game_password: ${SECRET_FACTORIO_PW}
+      # Existing Secret containing a `game_password` data entry
+      passwordSecret: ''
     serverSettings:
       # Your Instance Name
       name: Clean Slate
@@ -89,13 +119,6 @@ spec:
         public: false
         # Game will be broadcast on LAN
         lan: true
-      # Your factorio.com login credentials. Required for games with visibility public
-      username: ${SECRET_FACTORIO_USER}
-      password: ''
-      # Authentication token. May be used instead of password above.
-      token: ${SECRET_FACTORIO_TOKEN}
-      # password required to log into the factorio server
-      game_password: ${SECRET_FACTORIO_PW}
       # When set to true, the server will only allow clients that have a valid Factorio.com account
       require_user_verification: false
       # optional, default value is 0. 0 means unlimited.
