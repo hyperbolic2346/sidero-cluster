@@ -51,10 +51,10 @@ cameras:
   back-drive:
     ffmpeg:
       inputs:
-        - path: rtsp://10.0.1.18:7447/Oj6JuFE5mX5zBOHL
+        - path: rtsp://10.0.1.1:7447/Oj6JuFE5mX5zBOHL
           roles:
             - detect
-        - path: rtsp://10.0.1.18:7447/iqLTysjs0mJIL0Mn
+        - path: rtsp://10.0.1.1:7447/iqLTysjs0mJIL0Mn
           roles:
             - record
             - rtmp
@@ -74,10 +74,10 @@ cameras:
   front-door:
     ffmpeg:
       inputs:
-        - path: rtsps://10.0.1.18:7441/fGbT9roF3ehu1pD3?enableSrtp
+        - path: rtsps://10.0.1.1:7441/fGbT9roF3ehu1pD3?enableSrtp
           roles:
             - detect
-        - path: rtsps://10.0.1.18:7441/OOpy17C6MJpV4NQs?enableSrtp
+        - path: rtsps://10.0.1.1:7441/OOpy17C6MJpV4NQs?enableSrtp
           roles:
             - record
             - rtmp
@@ -85,10 +85,10 @@ cameras:
   gate:
     ffmpeg:
       inputs:
-        - path: rtsp://10.0.1.18:7447/t9w1bowAkyyxiKim
+        - path: rtsp://10.0.1.1:7447/t9w1bowAkyyxiKim
           roles:
             - detect
-        - path: rtsp://10.0.1.18:7447/1wbphRIgh1ZRJjhG
+        - path: rtsp://10.0.1.1:7447/1wbphRIgh1ZRJjhG
           roles:
             - record
             - rtmp
@@ -106,10 +106,10 @@ cameras:
   gate-rear:
     ffmpeg:
       inputs:
-        - path: rtsp://10.0.1.18:7447/RxYUnH7TWc9B5bj8
+        - path: rtsp://10.0.1.1:7447/RxYUnH7TWc9B5bj8
           roles:
             - detect
-        - path: rtsp://10.0.1.18:7447/5yttyhAdUKP7k9E4
+        - path: rtsp://10.0.1.1:7447/5yttyhAdUKP7k9E4
           roles:
             - rtmp
             - record
