@@ -8,6 +8,8 @@ configMapGenerator:
   - name: frigate-configmap
     namespace: home
     files:
-      - ./config.yml
+      - config.yaml
 generatorOptions:
   disableNameSuffixHash: true
+  annotations:
+    kustomize.toolkit.fluxcd.io/substitute: disabled

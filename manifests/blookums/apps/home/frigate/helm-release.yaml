@@ -11,26 +11,25 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: frigate
-      version: 8.2.2
+      chart: app-template
+      version: 1.4.0
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s-charts
         namespace: flux-system
-      interval: 5m
+      interval: 60m
   values:
     configmap:
       config:
         enabled: false
     image:
       repository: blakeblackshear/frigate
-      tag: 0.10.1-amd64
+      tag: 0.12.0
     env:
       TZ: America/New_York
       FRIGATE_MQTT_HOST: ${SECRET_MQTT_HOST}
-      FRIGATE_MQTT_USER: ${SECRET_MQTT_USERNAME}
-      FRIGATE_MQTT_PW: ${SECRET_MQTT_PASSWORD}
+      FRIGATE_MQTT_USERNAME: ${SECRET_MQTT_USERNAME}
+      FRIGATE_MQTT_PASSWORD: ${SECRET_MQTT_PASSWORD}
     ingress:
       main:
         enabled: true
@@ -53,7 +52,8 @@ spec:
         enabled: true
         type: configMap
         name: frigate-configmap
-        mountPath: /config
+        subPath: config.yaml
+        mountPath: /config/config.yml
         readOnly: true
       data:
         enabled: true

@@ -1,9 +1,9 @@
 ---
 mqtt:
-  host: '${FRIGATE_MQTT_HOST}'
+  host: '{FRIGATE_MQTT_HOST}'
   port: 8883
-  user: '${FRIGATE_MQTT_USER}'
-  password: '${FRIGATE_MQTT_PW}'
+  user: '{FRIGATE_MQTT_USER}'
+  password: '{FRIGATE_MQTT_PW}'
   topic_prefix: frigate
 
 database:
