@@ -30,6 +30,11 @@ spec:
       FRIGATE_MQTT_HOST: ${SECRET_MQTT_HOST}
       FRIGATE_MQTT_USERNAME: ${SECRET_MQTT_USERNAME}
       FRIGATE_MQTT_PASSWORD: ${SECRET_MQTT_PASSWORD}
+    service:
+      main:
+        ports:
+          http:
+            port: &port 5000
     ingress:
       main:
         enabled: true
