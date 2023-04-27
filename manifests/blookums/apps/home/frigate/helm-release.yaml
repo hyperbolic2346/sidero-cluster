@@ -62,12 +62,12 @@ spec:
         readOnly: true
       data:
         enabled: true
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         size: 2Ti
       media:
         enabled: true
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         size: 20Ti
       usb:
