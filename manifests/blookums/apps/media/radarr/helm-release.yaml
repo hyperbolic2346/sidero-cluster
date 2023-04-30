@@ -9,13 +9,13 @@ spec:
   interval: 10m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: radarr
-      version: 16.3.2
+      chart: app-template
+      version: 1.4.0
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s-charts
         namespace: flux-system
+      interval: 60m
   dependsOn:
     - name: rook-ceph-cluster
       namespace: rook-ceph
@@ -58,6 +58,12 @@ spec:
       PGID: 1001
       TZ: America/New_York
 
+    service:
+      main:
+        ports:
+          http:
+            port: 7878
+
     probes:
       startup:
         enabled: true
@@ -65,7 +71,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: ceph-hdd
+        storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         type: pvc
         size: 8Gi
@@ -98,7 +104,7 @@ spec:
         cpu: 100m
         memory: 512Mi
     metrics:
-      enabled: true
+      enabled: false
       serviceMonitor:
         interval: 3m
         scrapeTimeout: 1m
