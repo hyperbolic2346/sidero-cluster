@@ -23,8 +23,8 @@ spec:
       config:
         enabled: false
     image:
-      repository: blakeblackshear/frigate
-      tag: 0.11.0-rc2
+      repository: ghcr.io/blakeblackshear/frigate
+      tag: 0.12.0
     env:
       TZ: America/New_York
       FRIGATE_MQTT_HOST: ${SECRET_MQTT_HOST}
@@ -35,6 +35,24 @@ spec:
         ports:
           http:
             port: &port 5000
+          rtsp:
+            enabled: true
+            port: 8554
+    probes:
+      liveness: &probes
+        enabled: true
+        custom: true
+        spec:
+          httpGet:
+            path: /api/version
+            port: *port
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          timeoutSeconds: 1
+          failureThreshold: 3
+      readiness: *probes
+      startup:
+        enabled: false
     ingress:
       main:
         enabled: true
@@ -44,6 +62,7 @@ spec:
           nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
           nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
           cert-manager.io/cluster-issuer: letsencrypt-production
+          hajimari.io/icon: mdi:cctv
         hosts:
           - host: frigate.${SECRET_DOMAIN}
             paths:
@@ -87,9 +106,9 @@ spec:
       google.feature.node.kubernetes.io/coral: 'true'
     resources:
       requests:
-        memory: 100Mi
+        memory: 1000Mi
         cpu: 500m
       limits:
-        memory: 2000Mi
+        memory: 6000Mi
     podAnnotations:
       backup.velero.io/backup-volumes: config,media,data
