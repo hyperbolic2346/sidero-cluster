@@ -29,7 +29,7 @@ spec:
       TZ: America/New_York
       FRIGATE_MQTT_HOST: ${SECRET_MQTT_HOST}
       FRIGATE_MQTT_USER: ${SECRET_MQTT_USERNAME}
-      FRIGATE_MQTT_PW: ${SECRET_MQTT_PASSWORD}
+      FRIGATE_MQTT_PASSWORD: ${SECRET_MQTT_PASSWORD}
     service:
       main:
         ports:
