@@ -51,7 +51,7 @@ spec:
         repository: bitnami/bitnami-shell
         tag: 11
     metrics:
-      enabled: true
+      enabled: false
       image:
         repository: bitnami/mysqld-exporter
         tag: 0.14.0
