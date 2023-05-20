@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: mariadb
-      version: 12.1.6
+      version: 12.2.3
       sourceRef:
         kind: HelmRepository
         name: bitnami-charts
@@ -27,7 +27,7 @@ spec:
     fullnameOverride: photoprism-mariadb
     image:
       repository: bitnami/mariadb
-      tag: 10.11.2
+      tag: 10.11.3
     auth:
       database: photoprism
       username: photoprism
