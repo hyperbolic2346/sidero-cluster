@@ -18,7 +18,7 @@ spec:
         namespace: flux-system
   values:
     # ref: https://hub.docker.com/r/itzg/minecraft-server/
-    image: 
+    image:
       repository: itzg/minecraft-server
       tag: latest
 
@@ -53,11 +53,11 @@ spec:
 
     minecraftServer:
       # This must be overridden, since we can't accept this for the user.
-      eula: "TRUE"
+      eula: 'TRUE'
       # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
-      version: "LATEST"
+      version: LATEST
       # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA"
-      type: "PAPER"
+      type: PAPER
       # If type is set to FORGE, this sets the version; this is ignored if forgeInstallerUrl is set
       forgeVersion:
       # If type is set to SPONGEVANILLA, this sets the version
@@ -77,9 +77,9 @@ spec:
       # One of: peaceful, easy, normal, and hard
       difficulty: normal
       # A comma-separated list of player names to whitelist.
-      whitelist: "hyperbolic2346,minionmcmuffin"
+      whitelist: hyperbolic2346,minionmcmuffin
       # A comma-separated list of player names who should be admins.
-      ops: "hyperbolic2346"
+      ops: hyperbolic2346
       # A server icon URL for server listings. Auto-scaled and transcoded.
       icon:
       # Max connected players.
@@ -115,7 +115,7 @@ spec:
       # One of: creative, survival, adventure, spectator
       gameMode: survival
       # Message of the Day
-      motd: "Welcome to Oliver's Skyblock server!"
+      motd: Welcome to Oliver's Skyblock server!
       # If true, enable player-vs-player damage.
       pvp: false
       # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
@@ -123,13 +123,13 @@ spec:
       # When levelType == FLAT or CUSTOMIZED, this can be used to further customize map generation.
       # ref: https://hub.docker.com/r/itzg/minecraft-server/
       generatorSettings:
-      worldSaveName: "oliver"
+      worldSaveName: oliver
       # If set, this URL will be downloaded at startup and used as a starting point
-      downloadWorldUrl: "https://gate.${SECRET_DOMAIN}/media/SkyBlock.zip"
+      downloadWorldUrl: https://gate.${SECRET_DOMAIN}/media/SkyBlock.zip
       # force re-download of server file
       forceReDownload: false
       # If set, the modpack at this URL will be downloaded at startup
-      downloadModpackUrl: "https://gate.${SECRET_DOMAIN}/media/skyblock-mods.zip"
+      downloadModpackUrl: https://gate.${SECRET_DOMAIN}/media/skyblock-mods.zip
       # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
       removeOldMods: false
       # Check accounts against Minecraft account service.
@@ -137,10 +137,10 @@ spec:
       # If you adjust this, you may need to adjust resources.requests above to match.
       memory: 12G
       # General JVM options to be passed to the Minecraft server invocation
-      jvmOpts: ""
+      jvmOpts: ''
       # Options like -X that need to proceed general JVM options
-      jvmXXOpts: ""
-      #"-XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseLargePages -XX:LargePageSizeInBytes=2m"
+      jvmXXOpts: ''
+      # "-XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50 -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseLargePages -XX:LargePageSizeInBytes=2m"
       serviceAnnotations: {}
       serviceType: LoadBalancer
       ## Set the port used if the serviceType is NodePort
@@ -151,7 +151,7 @@ spec:
       externalTrafficPolicy: Local
       externalIPs:
 
-    
+
       rcon:
         # If you enable this, make SURE to change your password below.
         enabled: true
@@ -162,7 +162,7 @@ spec:
         # loadBalancerSourceRanges: []
         ## Set the externalTrafficPolicy in the Service to either Cluster or Local
         externalTrafficPolicy: Local
-    
+
       extraPorts:
         - name: dynmapsky
           containerPort: 8123
@@ -171,7 +171,7 @@ spec:
             enabled: true
             annotations: {}
             type: ClusterIP
-            loadBalancerIP: ""
+            loadBalancerIP: ''
             loadBalancerSourceRanges: []
             # externalTrafficPolicy: Cluster
             port: 8123
@@ -179,8 +179,8 @@ spec:
             enabled: true
             annotations:
               kubernetes.io/ingress.class: nginx
-              kubernetes.io/tls-acme: "true"
-              nginx.ingress.kubernetes.io/auth-url: "http://oauth2-proxy.kube-system.svc.cluster.local/oauth2/auth"
+              kubernetes.io/tls-acme: 'true'
+              nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.kube-system.svc.cluster.local/oauth2/auth
               nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
               cert-manager.io/cluster-issuer: letsencrypt-production
             hosts:
@@ -190,19 +190,19 @@ spec:
               - secretName: skyblock-tls
                 hosts:
                   - skyblock.${SECRET_DOMAIN}
-        
+
       query:
         # If you enable this, your server will be "published" to Gamespy
         enabled: false
         port: 25565
-    
+
     ## Additional minecraft container environment variables
     ##
-    extraEnv: 
+    extraEnv:
       USE_AIKAR_FLAGS: true
       OVERRIDE_SERVER_PROPERTIES: true
       SPAWN_PROTECTION: 0
-    
+
     persistence:
       ## minecraft data Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>

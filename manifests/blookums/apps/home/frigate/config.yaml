@@ -1,6 +1,6 @@
 ---
 mqtt:
-  host: '10.0.1.14'
+  host: 10.0.1.14
   port: 8883
   user: '{FRIGATE_MQTT_USER}'
   password: '{FRIGATE_MQTT_PASSWORD}'

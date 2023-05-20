@@ -5,7 +5,7 @@ metadata:
   name: aeotec-zwave-device
 spec:
   rules:
-      # Aeotec Z-Stick Gen5+
+    # Aeotec Z-Stick Gen5+
     - name: aeotec.zwave
       labels:
         aeotec.feature.node.kubernetes.io/zwave: 'true'

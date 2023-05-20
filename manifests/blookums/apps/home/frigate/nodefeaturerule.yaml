@@ -5,7 +5,7 @@ metadata:
   name: google-coral-device
 spec:
   rules:
-      # Google Coral USB Accelerator
+    # Google Coral USB Accelerator
     - name: google.coral
       labels:
         google.feature.node.kubernetes.io/coral: 'true'

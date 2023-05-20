@@ -29,8 +29,8 @@ spec:
             - nextcloud.${SECRET_DOMAIN}
           secretName: netcloud-cert
       annotations:
-        nginx.ingress.kubernetes.io/enable-cors: "true"
-        nginx.ingress.kubernetes.io/cors-allow-headers: "X-Forwarded-For"
+        nginx.ingress.kubernetes.io/enable-cors: 'true'
+        nginx.ingress.kubernetes.io/cors-allow-headers: X-Forwarded-For
         cert-manager.io/cluster-issuer: letsencrypt-production
         kubernetes.io/ingress.class: nginx
         nginx.ingress.kubernetes.io/proxy-body-size: 4G
