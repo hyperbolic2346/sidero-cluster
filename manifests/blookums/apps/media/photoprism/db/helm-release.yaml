@@ -43,7 +43,7 @@ spec:
         enabled: true
         initialDelaySeconds: 900
       readinessProbe:
-        enabled: true
+        enabled: false
         initialDelaySeconds: 900
     volumePermissions:
       enabled: true
