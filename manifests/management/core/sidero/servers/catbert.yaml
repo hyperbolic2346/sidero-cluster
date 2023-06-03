@@ -33,6 +33,7 @@ spec:
             dhcp: true
             vip:
               ip: 10.0.14.5
+        hostname: catbert
     - op: replace
       path: /machine/certSANs
       value:
