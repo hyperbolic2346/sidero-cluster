@@ -34,4 +34,4 @@ spec:
           enabled: true
       image:
         repository: quay.io/metallb/speaker
-        tag: v0.13.9
+        tag: v0.13.10
