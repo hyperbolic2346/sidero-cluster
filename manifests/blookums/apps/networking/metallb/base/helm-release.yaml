@@ -28,6 +28,8 @@ spec:
         repository: quay.io/metallb/controller
         tag: v0.13.10
     speaker:
+      frr:
+        enabled: false
       metrics:
         enabled: true
         serviceMonitor:
