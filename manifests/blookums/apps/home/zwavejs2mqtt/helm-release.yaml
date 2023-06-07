@@ -21,7 +21,7 @@ spec:
   values:
     image:
       repository: zwavejs/zwavejs2mqtt
-      tag: 8.17.1
+      tag: 8.18.0
       pullPolicy: IfNotPresent
 
     service:
