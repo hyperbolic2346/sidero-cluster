@@ -2,10 +2,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: newworld1.20
+  name: newworld120
   namespace: gaming
 spec:
-  releaseName: newworld1.20
+  releaseName: newworld120
   interval: 10m
   chart:
     spec:
