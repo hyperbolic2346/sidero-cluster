@@ -21,7 +21,7 @@ spec:
   values:
     image:
       repository: homeassistant/home-assistant
-      tag: 2023.6.0
+      tag: 2023.6.3
     persistence:
       config:
         enabled: true
@@ -71,7 +71,7 @@ spec:
         enabled: true
         image:
           repository: codercom/code-server
-          tag: 4.13.0
+          tag: 4.14.0
         workingDir: /config
         args:
           - --auth
