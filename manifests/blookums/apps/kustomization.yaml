@@ -4,6 +4,7 @@ kind: Kustomization
 bases:
   - ../../_base/apps/
 resources:
+  - brigman
   - gaming
   - gate
   - home
