@@ -53,6 +53,7 @@ spec:
         enabled: true
         storageClass: ceph-hdd-xfs
         size: 500Ti
+        accessMode: ReadWriteOnce
         mountPath: /usr/src/app/upload
     topologySpreadConstraints:
       - maxSkew: 1
