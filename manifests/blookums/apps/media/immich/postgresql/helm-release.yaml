@@ -35,9 +35,9 @@ spec:
     global:
       postgresql:
         auth:
-          username: $(DB_USERNAME)
-          database: $(DB_DATABASE_NAME)
-          password: $(DB_PASSWORD)
+          username: ${SECRET_IMMICH_REDIS_USER}
+          database: immich
+          password: ${SECRET_IMMICH_REDIS_PW}
       primary:
         persistence:
           storageClass: ceph-ssd-xfs
