@@ -12,6 +12,7 @@ data:
   LOG_LEVEL: verbose
   REDIS_HOSTNAME: immich-redis.media.svc.cluster.local
   REDIS_PORT: "6379"
+  TYPESENSE_API_KEY: xyz
   TYPESENSE_DATA_DIR: /config
   TYPESENSE_HOST: immich-typesense.media.svc.cluster.local
   
