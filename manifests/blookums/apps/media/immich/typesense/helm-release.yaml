@@ -61,6 +61,11 @@ spec:
       - name: data
         mountPath: /data
         accessMode: ReadWriteOnce
+        size: 10Gi
+        storageClass: ceph-ssd-xfs
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
         size: 1Gi
         storageClass: ceph-ssd-xfs
     resources:

@@ -32,7 +32,10 @@ spec:
       tag: 7.0.11
     env:
       REDIS_REPLICATION_MODE: master
-    command: ["redis-server"]
+    envFrom:
+      - configMapRef:
+          name: immich-configmap
+    command: [redis-server, --requirepass, $(DB_PASSWORD)]
     service:
       main:
         ports:
