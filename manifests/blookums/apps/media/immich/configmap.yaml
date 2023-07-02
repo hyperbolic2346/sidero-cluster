@@ -5,7 +5,7 @@ metadata:
   name: immich-configmap
   namespace: media
 data:
-  DB_PORT: '6379'
+  DB_PORT: '5432'
   IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning.media.svc.cluster.local:3003
   IMMICH_SERVER_URL: http://immich-server.media.svc.cluster.local:3001
   IMMICH_WEB_URL: http://immich-web.media.svc.cluster.local:3000
@@ -16,6 +16,6 @@ data:
   TYPESENSE_DATA_DIR: /config
   TYPESENSE_HOST: immich-typesense.media.svc.cluster.local
   DB_DATABASE_NAME: immich
-  DB_HOSTNAME: immich-redis.media.svc.cluster.local
+  DB_HOSTNAME: immich-postgresql.media.svc.cluster.local
   DB_PASSWORD: ${SECRET_IMMICH_REDIS_PW}
   DB_USERNAME: ${SECRET_IMMICH_REDIS_USER}

@@ -5,6 +5,7 @@ resources:
   - configmap.yaml
   - machine-learning
   - microservice
+  - postgresql
   - proxy
   - redis
   - server
