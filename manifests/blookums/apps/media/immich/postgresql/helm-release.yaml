@@ -29,7 +29,8 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: docker.io/bitnami/postgresql
+      registry: docker.io
+      repository: bitnami/postgresql
       tag: 15.3.0-debian-11-r17
     global:
       postgresql:
