@@ -38,3 +38,10 @@ spec:
         ports:
           http:
             port: 6379
+    persistence:
+      data:
+        enabled: true
+        storageClass: ceph-ssd-xfs
+        size: 500Gi
+        accessMode: ReadWriteOnce
+        mountPath: /data

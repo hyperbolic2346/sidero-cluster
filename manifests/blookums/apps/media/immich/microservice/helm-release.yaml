@@ -50,7 +50,7 @@ spec:
     persistence:
       library:
         enabled: true
-        existingClaim: immich-nfs
+        existingClaim: immich-server-library
         mountPath: /usr/src/app/upload
     topologySpreadConstraints:
       - maxSkew: 1
