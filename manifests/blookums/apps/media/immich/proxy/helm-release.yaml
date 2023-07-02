@@ -33,14 +33,11 @@ spec:
       replicas: 1
       strategy: RollingUpdate
       annotations:
-        secret.reloader.stakater.com/reload: immich-secret
         configmap.reloader.stakater.com/reload: immich-configmap
     image:
       repository: ghcr.io/immich-app/immich-proxy
       tag: v1.59.1
     envFrom:
-      - secretRef:
-          name: immich-secret
       - configMapRef:
           name: immich-configmap
     service:
@@ -55,7 +52,7 @@ spec:
         annotations:
           ingress.home.arpa/type: "external"
         hosts:
-          - host: photos.${SECRET_DOMAIN_NAME}
+          - host: immich.${SECRET_DOMAIN_NAME}
             paths:
               - path: /
                 pathType: Prefix
