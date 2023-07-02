@@ -14,5 +14,4 @@ data:
   REDIS_PORT: "6379"
   TYPESENSE_DATA_DIR: /config
   TYPESENSE_HOST: immich-typesense.media.svc.cluster.local
-  IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning.media.svc.cluster.local:3003
   
