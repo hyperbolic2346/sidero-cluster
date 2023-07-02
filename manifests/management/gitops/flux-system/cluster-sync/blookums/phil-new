@@ -1,0 +1,299 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    csi.volume.kubernetes.io/nodeid: '{"rook-ceph.cephfs.csi.ceph.com":"talos-mtj-qwv","rook-ceph.rbd.csi.ceph.com":"talos-mtj-qwv"}'
+    flannel.alpha.coreos.com/backend-data: '{"VNI":1,"VtepMAC":"1a:fc:11:16:20:29"}'
+    flannel.alpha.coreos.com/backend-type: vxlan
+    flannel.alpha.coreos.com/kube-subnet-manager: "true"
+    flannel.alpha.coreos.com/public-ip: 10.0.14.17
+    nfd.node.kubernetes.io/extended-resources: ""
+    nfd.node.kubernetes.io/feature-labels: custom-rdma.capable,pci-0300_102b.present,usb-03_0624_0294.present
+    nfd.node.kubernetes.io/worker.version: v0.13.1
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2023-06-01T19:08:28Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    feature.node.kubernetes.io/custom-rdma.capable: "true"
+    feature.node.kubernetes.io/pci-0300_102b.present: "true"
+    feature.node.kubernetes.io/usb-03_0624_0294.present: "true"
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: talos-mtj-qwv
+    kubernetes.io/os: linux
+    metal.sidero.dev/uuid: 4c4c4544-0031-3810-8047-b4c04f433432
+  name: talos-mtj-qwv
+  resourceVersion: "50085799"
+  uid: c4bf8a48-974b-4199-9ebd-88e382e324ad
+spec:
+  podCIDR: 10.244.6.0/24
+  podCIDRs:
+  - 10.244.6.0/24
+status:
+  addresses:
+  - address: 10.0.14.17
+    type: InternalIP
+  - address: talos-mtj-qwv
+    type: Hostname
+  allocatable:
+    cpu: 15950m
+    ephemeral-storage: "1798076703429"
+    hugepages-2Mi: 2Gi
+    memory: 63283356Ki
+    pods: "110"
+  capacity:
+    cpu: "16"
+    ephemeral-storage: 1951329364Ki
+    hugepages-2Mi: 2Gi
+    memory: 65679516Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2023-06-01T19:08:56Z"
+    lastTransitionTime: "2023-06-01T19:08:56Z"
+    message: Flannel is running on this node
+    reason: FlannelIsUp
+    status: "False"
+    type: NetworkUnavailable
+  - lastHeartbeatTime: "2023-06-03T01:06:52Z"
+    lastTransitionTime: "2023-06-01T19:08:28Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2023-06-03T01:06:52Z"
+    lastTransitionTime: "2023-06-01T19:08:28Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2023-06-03T01:06:52Z"
+    lastTransitionTime: "2023-06-01T19:08:28Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2023-06-03T01:06:52Z"
+    lastTransitionTime: "2023-06-01T19:08:32Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - quay.io/cephcsi/cephcsi@sha256:336b4d3c9b10edfbe8eab90d732513d872e684b1ea954e021a9c1ded1f08599b
+    - quay.io/cephcsi/cephcsi:v3.8.0
+    sizeBytes: 631008907
+  - names:
+    - docker.io/rook/ceph@sha256:922e324d7b7391af2e1722b60ac795b4a032139366b3b3ec4d48aea18978ebd1
+    - docker.io/rook/ceph:v1.11.2
+    sizeBytes: 516031989
+  - names:
+    - docker.io/rook/ceph@sha256:6df9b5e8e590154a10dda8fe9fa0999d88b2de031a54d25a098229f91bb0d833
+    - docker.io/rook/ceph:v1.11.3
+    sizeBytes: 515336369
+  - names:
+    - quay.io/ceph/ceph@sha256:34c763383e3323c6bb35f3f2229af9f466518d9db926111277f5e27ed543c427
+    - quay.io/ceph/ceph:v17.2.5
+    sizeBytes: 484490845
+  - names:
+    - docker.io/homeassistant/home-assistant@sha256:754253c8ea21ec8a16f96bb5e2a13760641b4089a4f1031d74511476ef5df399
+    - docker.io/homeassistant/home-assistant:2023.4.2
+    sizeBytes: 481873919
+  - names:
+    - docker.io/homeassistant/home-assistant@sha256:a0b64e8be616a0187e43640d8c9b0224d435de2487d75e05002b047fb61bc613
+    - docker.io/homeassistant/home-assistant:2023.4.1
+    sizeBytes: 481553384
+  - names:
+    - docker.io/rook/ceph@sha256:601c946a22a0a0bcd6d05816d9aa83546889fe6dc71b7c1484a92aa21ded3b50
+    - docker.io/rook/ceph:v1.11.6
+    sizeBytes: 424160846
+  - names:
+    - docker.io/rook/ceph@sha256:ccc6521c6079d9dd5d8f6dcf91acf7ed50195375a3e26504da9fd5914e0c666b
+    - docker.io/rook/ceph:v1.11.5
+    sizeBytes: 424157151
+  - names:
+    - docker.io/rook/ceph@sha256:1a0951545d7865c83d1e8b568da145e11efdc7f977403ec83fe440f4958b63ec
+    - docker.io/rook/ceph:v1.11.4
+    sizeBytes: 424090279
+  - names:
+    - quay.io/ceph/ceph@sha256:1161e35e4e02cf377c93b913ce78773f8413f5a8d7c5eaee4b4773a4f9dd6635
+    - quay.io/ceph/ceph:v17.2.6
+    sizeBytes: 408388953
+  - names:
+    - ghcr.io/k8s-at-home/sonarr@sha256:6f11e1a769216c576d6073a5288d81f10e08ddd79baf59656f21dbb2fd896e72
+    - ghcr.io/k8s-at-home/sonarr:v3.0.9.1549
+    sizeBytes: 292470696
+  - names:
+    - docker.io/codercom/code-server@sha256:1e2cc688008ea2b575053e270668cf075a337425b9e93bf15b5b2692743b602f
+    - docker.io/codercom/code-server:4.11.0
+    sizeBytes: 244777952
+  - names:
+    - docker.io/drpsychick/arkserver@sha256:4bcbf4245204f8f91ced5b85467e6f7bebcee6494083994960be2723995bb074
+    - docker.io/drpsychick/arkserver:latest-master
+    sizeBytes: 157212263
+  - names:
+    - docker.io/knobby/celery_motion@sha256:ac1732054b11512ee53b2c424faadfdaa12332744cc8f7be699766cccf586fa1
+    - docker.io/knobby/celery_motion:latest
+    sizeBytes: 143151115
+  - names:
+    - ghcr.io/k8s-at-home/radarr@sha256:4273dfaf0295968c7152d6803c2b0b8556f4feb0187311d354a8e8f4d1066e0d
+    - ghcr.io/k8s-at-home/radarr:v4.1.0.6175
+    sizeBytes: 126557651
+  - names:
+    - docker.io/bitnami/mariadb@sha256:02782792566b6813533b8ac04bdabdc3049fd1d706f40d72a3b8c6e31ef3b14d
+    - docker.io/bitnami/mariadb:10.11.3
+    sizeBytes: 115813077
+  - names:
+    - registry.k8s.io/ingress-nginx/controller@sha256:7612338342a1e7b8090bef78f2a04fffcadd548ccaabe8a47bf7758ff549a5f7
+    sizeBytes: 113984258
+  - names:
+    - ghcr.io/onedr0p/radarr-develop@sha256:74b2e992e90314250e6882d5aa7491ea7647230478f304e4d0eb13f8ab16fc7d
+    sizeBytes: 94991371
+  - names:
+    - docker.io/grafana/promtail@sha256:762bc5be21174c50c636cf53e4c94bacf940488a803edb3e3018f6d0dd09df57
+    - docker.io/grafana/promtail:2.8.2
+    sizeBytes: 74395708
+  - names:
+    - registry.k8s.io/nfd/node-feature-discovery@sha256:106377e30640c96e02286aac3dcdf581e0c37ed3101504cb8217b11a5f2eb3fb
+    - registry.k8s.io/nfd/node-feature-discovery:v0.12.2
+    sizeBytes: 73708334
+  - names:
+    - registry.k8s.io/nfd/node-feature-discovery@sha256:445ed7b7c8580825c23a6f3835c1f13718fcf72b393f51e852aa5bdda04657e7
+    - registry.k8s.io/nfd/node-feature-discovery:v0.12.1
+    sizeBytes: 73669644
+  - names:
+    - docker.io/grafana/promtail@sha256:db66221bcc9510f3101121d42354b19c83cb810c5480e4936eb75c43443656f4
+    - docker.io/grafana/promtail:2.7.4
+    sizeBytes: 72730023
+  - names:
+    - docker.io/grafana/agent@sha256:0650f907ba96545067845bfbfb70edb545db5635ab8534aa584c17c3f51c5e45
+    - docker.io/grafana/agent:v0.25.1
+    sizeBytes: 69952038
+  - names:
+    - registry.k8s.io/nfd/node-feature-discovery@sha256:90bfe8372e8ff567ee0d232167c56ede87c72eaf052ceb1773d1641d8a5f6b88
+    - registry.k8s.io/nfd/node-feature-discovery:v0.13.1
+    sizeBytes: 64720249
+  - names:
+    - registry.k8s.io/nfd/node-feature-discovery@sha256:7a442aa48f35f0d7e94104605e8452c2fa6b792d6cb3b06083b46eab7370262f
+    - registry.k8s.io/nfd/node-feature-discovery:v0.13.0
+    sizeBytes: 64720050
+  - names:
+    - docker.io/velero/velero@sha256:f635442a0f47bbc8d1d868ca2b50d06e028d2c5048fd73a5986c92df317aff26
+    - docker.io/velero/velero:v1.10.2
+    sizeBytes: 52882989
+  - names:
+    - docker.io/velero/velero@sha256:80fc407e950931bf594d97aee2f4de3b1f41e596fba0af590e1530347554ec1c
+    - docker.io/velero/velero:v1.11.0
+    sizeBytes: 52061680
+  - names:
+    - ghcr.io/fluxcd/kustomize-controller@sha256:c9c15fce4d427e4b96c28d7d0bc36c3fafcb15d5818f08dd75066eefa352886f
+    - ghcr.io/fluxcd/kustomize-controller:v1.0.0-rc.3
+    sizeBytes: 51833432
+  - names:
+    - ghcr.io/fluxcd/kustomize-controller@sha256:6403343ceec9441222ce6b79e65fd2a8285da2f4392776dd56caa822fe6632c6
+    - ghcr.io/fluxcd/kustomize-controller:v1.0.0-rc.2
+    sizeBytes: 51770822
+  - names:
+    - quay.io/metallb/speaker@sha256:ed242e213112bf5c70978cd4abf3173582292daa692ee2ed07497e32275a77a5
+    - quay.io/metallb/speaker:v0.13.9
+    sizeBytes: 50147860
+  - names:
+    - ghcr.io/siderolabs/install-cni@sha256:cdfb7249705daede7360ece03896f83f780367aded366b14d11d5ad3887c1c81
+    - ghcr.io/siderolabs/install-cni:v1.3.0-3-g527b5f7
+    sizeBytes: 43814510
+  - names:
+    - ghcr.io/siderolabs/install-cni@sha256:033c36946a62b77b2bdeeaac9b801be127f7e934f1c2f1aaddaf666352b67285
+    - ghcr.io/siderolabs/install-cni:v1.3.0-1-g3773d71
+    sizeBytes: 43804482
+  - names:
+    - docker.io/acockburn/appdaemon@sha256:9619fc18bc53082ae2dc680e80f1bcb634c793a74b2114779df1b381ffa0736c
+    - docker.io/acockburn/appdaemon:4.4.2
+    sizeBytes: 43109559
+  - names:
+    - ghcr.io/fluxcd/helm-controller@sha256:473694b6f002248408704965e6a1236d4fed62a6c32513e28b86fdfae7d6d799
+    - ghcr.io/fluxcd/helm-controller:v0.32.2
+    sizeBytes: 35507643
+  - names:
+    - ghcr.io/fluxcd/notification-controller@sha256:b809c653dfe1dd9838c638b9d6cdde8a15acc46d7536657da8d5a4da28c30f31
+    - ghcr.io/fluxcd/notification-controller:v1.0.0-rc.2
+    sizeBytes: 34096681
+  - names:
+    - docker.io/bitnami/bitnami-shell@sha256:5502c0f4e07cebdd740a52cde3b84465240480fff66c8574bccc09e6ba7c7a93
+    - docker.io/bitnami/bitnami-shell:11
+    sizeBytes: 33867007
+  - names:
+    - registry.k8s.io/descheduler/descheduler@sha256:491a2128d2603890f0b0892669fe6bf017a331444ad64a2adc3aa38d90138997
+    - registry.k8s.io/descheduler/descheduler:v0.27.0
+    sizeBytes: 32275470
+  - names:
+    - registry.k8s.io/descheduler/descheduler@sha256:083d51d7295b7d4d0fa60c9f634d2877419a5b8fdc3a48590dd14c1e05467971
+    - registry.k8s.io/descheduler/descheduler:v0.26.0
+    sizeBytes: 31253427
+  - names:
+    - registry.k8s.io/descheduler/descheduler@sha256:3d4981fd65c449455edc8bed14a010937112cb69ac30ddd90be4fd5203a777db
+    - registry.k8s.io/descheduler/descheduler:v0.26.1
+    sizeBytes: 31253420
+  - names:
+    - ghcr.io/fluxcd/source-controller@sha256:e45a6c54b172182255814eae0b61187f06c0a8be5e1cf6f266ce369c01882597
+    - ghcr.io/fluxcd/source-controller:v1.0.0-rc.2
+    sizeBytes: 29534532
+  - names:
+    - ghcr.io/kubeshop/k8s-sidecar@sha256:7f583a36a764e86d5bdf50d58ee1c6ed3241f4f9eec7a9f3b0cb4cf1ff3ddb37
+    - ghcr.io/kubeshop/k8s-sidecar:ignore-initial-events
+    sizeBytes: 24052296
+  - names:
+    - docker.io/grafana/loki@sha256:b1da1d23037eb1b344cccfc5b587e30aed60ab4cad33b42890ff850aa3c4755d
+    - docker.io/grafana/loki:2.8.2
+    sizeBytes: 22414029
+  - names:
+    - docker.io/grafana/loki@sha256:0d28e4dddd4ccce1772544a501e8b8f96595accbb74ee8cd0415bce81dd2edfc
+    - docker.io/grafana/loki:2.8.0
+    sizeBytes: 22334670
+  - names:
+    - docker.io/grafana/loki@sha256:7ab3cc62dd1ee3d874e29d982aecb1d4fd6ee71e31b0b13e0cb84fceb8d6b3ae
+    - docker.io/grafana/loki:main-5e53303
+    sizeBytes: 21934890
+  - names:
+    - registry.k8s.io/kube-proxy@sha256:1e9bbe429e4e2b2ad32681c91deb98a334f1bf4135137df5f84f9d03689060fe
+    - registry.k8s.io/kube-proxy:v1.26.0
+    sizeBytes: 21536465
+  - names:
+    - registry.k8s.io/kube-proxy@sha256:85f705e7d98158a67432c53885b0d470c673b0fad3693440b45d07efebcda1c3
+    - registry.k8s.io/kube-proxy:v1.26.1
+    sizeBytes: 21536169
+  - names:
+    - docker.io/grafana/loki@sha256:22396b3a4ae862e3b93b39c902b2086d2868052eace5f0bf071d9da6bf1039e3
+    - docker.io/grafana/loki:2.7.5
+    sizeBytes: 21533159
+  - names:
+    - ghcr.io/siderolabs/flannel@sha256:5286f3dc67db45edd0780611b06d1c25b4791c52b711a76fa61e5635ad69bc3f
+    - ghcr.io/siderolabs/flannel:v0.20.2
+    sizeBytes: 20909032
+  - names:
+    - ghcr.io/ghcr.io/kubeshop/botkube@sha256:b89dfff922d5978fe8824fdf6fbf83d1361444244832ca205ade3af315b7615d
+    - ghcr.io/ghcr.io/kubeshop/botkube:v1.0.1
+    sizeBytes: 20676433
+  - names:
+    - registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:4d99688e557396f5baa150e019ff7d5b7334f9b9f9a8dab64038c5c2a006f6b5
+    - registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+    sizeBytes: 19687037
+  nodeInfo:
+    architecture: amd64
+    bootID: c2909fea-1fe7-4d53-a84f-385132ad5523
+    containerRuntimeVersion: containerd://1.6.14
+    kernelVersion: 5.15.85-talos
+    kubeProxyVersion: v1.26.1
+    kubeletVersion: v1.26.1
+    machineID: 7a50bfad67b46e456800c83e93b987ac
+    operatingSystem: linux
+    osImage: Talos (v1.3.1)
+    systemUUID: 4c4c4544-0031-3810-8047-b4c04f433432
+  volumesInUse:
+  - kubernetes.io/csi/rook-ceph.rbd.csi.ceph.com^0001-0009-rook-ceph-0000000000000002-8831070f-9342-11ed-a32d-82a2425c369d
+  - kubernetes.io/csi/rook-ceph.rbd.csi.ceph.com^0001-0009-rook-ceph-0000000000000002-8b6fb28f-9342-11ed-a32d-82a2425c369d
+  - kubernetes.io/csi/rook-ceph.rbd.csi.ceph.com^0001-0009-rook-ceph-0000000000000003-ad297b88-9342-11ed-a32d-82a2425c369d
+  - kubernetes.io/csi/rook-ceph.rbd.csi.ceph.com^0001-0009-rook-ceph-0000000000000003-df1915a2-93c7-11ed-a32d-82a2425c369d
