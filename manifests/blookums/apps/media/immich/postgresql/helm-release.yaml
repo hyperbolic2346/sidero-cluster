@@ -39,6 +39,9 @@ spec:
           database: immich
           password: ${SECRET_IMMICH_REDIS_PW}
       primary:
+        extraEnvVars:
+          - name: BITNAMI_DEBUG
+            value: "true"
         persistence:
           storageClass: ceph-ssd-xfs
       readReplicas:
