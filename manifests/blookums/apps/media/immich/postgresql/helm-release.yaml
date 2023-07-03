@@ -41,7 +41,7 @@ spec:
       primary:
         extraEnvVars:
           - name: BITNAMI_DEBUG
-            value: "true"
+            value: 'true'
         persistence:
           storageClass: ceph-ssd-xfs
       readReplicas:
