@@ -39,27 +39,27 @@ spec:
           username: ${SECRET_IMMICH_REDIS_USER}
           database: immich
           password: ${SECRET_IMMICH_REDIS_PW}
-      primary:
-        persistence:
-          storageClass: ceph-ssd-xfs
-        resources:
-          requests:
-            cpu: 250m
-            memory: 256Mi
-            hugepages-2Mi: 512Mi
-          limits:
-            cpu: 2000m
-            memory: 1Gi
-            hugepages-2Mi: 512Mi
-      readReplicas:
-        persistence:
-          storageClass: ceph-ssd-xfs
-        resources:
-          requests:
-            cpu: 250m
-            memory: 256Mi
-            hugepages-2Mi: 512Mi
-          limits:
-            cpu: 2000m
-            memory: 1Gi
-            hugepages-2Mi: 512Mi
+    primary:
+      persistence:
+        storageClass: ceph-ssd-xfs
+      resources:
+        requests:
+          cpu: 250m
+          memory: 256Mi
+          hugepages-2Mi: 512Mi
+        limits:
+          cpu: 2000m
+          memory: 1Gi
+          hugepages-2Mi: 512Mi
+    readReplicas:
+      persistence:
+        storageClass: ceph-ssd-xfs
+      resources:
+        requests:
+          cpu: 250m
+          memory: 256Mi
+          hugepages-2Mi: 512Mi
+        limits:
+          cpu: 2000m
+          memory: 1Gi
+          hugepages-2Mi: 512Mi
