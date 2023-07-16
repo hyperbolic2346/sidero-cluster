@@ -144,7 +144,7 @@ spec:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      storageClass: ceph-hdd
+      storageClass: ceph-hdd-xfs
       accessMode: ReadWriteOnce
       size: 2Ti
       retain: true
