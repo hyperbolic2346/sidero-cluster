@@ -46,11 +46,11 @@ spec:
           requests:
             cpu: 250m
             memory: 256Mi
-            hugepages-2Mi: 256Mi
+            hugepages-2Mi: 512Mi
           limits:
             cpu: 2000m
             memory: 1Gi
-            hugepages-2Mi: 256Mi
+            hugepages-2Mi: 512Mi
       readReplicas:
         persistence:
           storageClass: ceph-ssd-xfs
@@ -58,8 +58,8 @@ spec:
           requests:
             cpu: 250m
             memory: 256Mi
-            hugepages-2Mi: 1Gi
+            hugepages-2Mi: 512Mi
           limits:
             cpu: 2000m
             memory: 1Gi
-            hugepages-2Mi: 1Gi
+            hugepages-2Mi: 512Mi
