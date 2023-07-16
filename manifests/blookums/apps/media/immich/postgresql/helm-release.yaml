@@ -44,6 +44,24 @@ spec:
             value: 'true'
         persistence:
           storageClass: ceph-ssd-xfs
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+            hugepages-2Mi: 256Mi
+          limits:
+            cpu: 2000m
+            memory: 1Gi
+            hugepages-2Mi: 256Mi
       readReplicas:
         persistence:
           storageClass: ceph-ssd-xfs
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+            hugepages-2Mi: 256Mi
+          limits:
+            cpu: 2000m
+            memory: 1Gi
+            hugepages-2Mi: 256Mi
