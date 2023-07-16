@@ -35,7 +35,7 @@ spec:
     envFrom:
       - configMapRef:
           name: immich-configmap
-    command: [redis-server, --requirepass, $(DB_PASSWORD)]
+    command: [redis-server]
     service:
       main:
         ports:
