@@ -126,15 +126,15 @@ spec:
         persistence:
           enabled: true
           storageClass: ceph-ssd-xfs
-      resources:
-        requests:
-          cpu: 250m
-          memory: 256Mi
-          hugepages-2Mi: 256Mi
-        limits:
-          cpu: 1000m
-          memory: 1Gi
-          hugepages-2Mi: 256Mi
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+            hugepages-2Mi: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+            hugepages-2Mi: 256Mi
     cronjob:
       enabled: false
       # Nexcloud image is used as default but only curl is needed
