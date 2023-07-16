@@ -62,4 +62,4 @@ spec:
           limits:
             cpu: 2000m
             memory: 1Gi
-            hugepages-2Mi: 256Mi
+            hugepages-2Mi: 1Gi
