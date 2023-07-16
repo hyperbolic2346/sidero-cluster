@@ -106,14 +106,35 @@ spec:
     nginx:
       enabled: false
     internalDatabase:
-      enabled: true
+      enabled: false
       name: nextcloud
     externalDatabase:
-      enabled: false
+      enabled: true
+      type: postgresql
+      password: ${SECRET_NEXTCLOUD_POSTGRESQL_PW}
     mariadb:
       enabled: false
     redis:
       enabled: false
+    postgresql:
+      enabled: true
+      global:
+        postgresql:
+          auth:
+            password: ${SECRET_NEXTCLOUD_POSTGRESQL_PW}
+      primary:
+        persistence:
+          enabled: true
+          storageClass: ceph-ssd-xfs
+      resources:
+        requests:
+          cpu: 250m
+          memory: 256Mi
+          hugepages-2Mi: 256Mi
+        limits:
+          cpu: 1000m
+          memory: 1Gi
+          hugepages-2Mi: 256Mi
     cronjob:
       enabled: false
       # Nexcloud image is used as default but only curl is needed

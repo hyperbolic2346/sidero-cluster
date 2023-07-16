@@ -67,7 +67,7 @@ spec:
         storageClass:
           enabled: true
           name: ceph-ssd
-          isDefault: true
+          isDefault: false
           reclaimPolicy: Delete
           allowVolumeExpansion: true
           parameters:
