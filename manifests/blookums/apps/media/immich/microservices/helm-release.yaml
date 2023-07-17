@@ -29,7 +29,7 @@ spec:
   dependsOn:
     - name: immich-typesense
       namespace: media
-    - name: redis
+    - name: immich-redis
       namespace: media
   values:
     controller:
