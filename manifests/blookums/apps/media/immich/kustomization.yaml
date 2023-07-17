@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - configmap.yaml
   - machine-learning
-  - microservice
+  - microservices
   - postgresql
   - proxy
   - redis
