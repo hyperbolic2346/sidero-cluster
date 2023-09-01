@@ -135,7 +135,23 @@
             "labels": [
                 "renovate/image-release",
                 "dependency/patch"
-            ]
+            ],
+            "excludePackageNames": ["docker.io/factoriotools/factorio"],
+            "automerge": true
+        },
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "labels": [
+                "renovate/image-release",
+                "dependency/patch"
+            ],
+            "matchPackageNames": ["docker.io/factoriotools/factorio"],
+            "automerge": false
         },
         {
             "matchDatasources": [
@@ -171,7 +187,23 @@
             "labels": [
                 "renovate/helm-release",
                 "dependency/patch"
-            ]
+            ],
+            "excludePackageNames": ["docker.io/factoriotools/factorio"],
+            "automerge": true
+        },
+        {
+            "matchDatasources": [
+                "helm"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "labels": [
+                "renovate/helm-release",
+                "dependency/patch"
+            ],
+            "matchPackageNames": ["docker.io/factoriotools/factorio"],
+            "automerge": false
         }
     ]
 }
