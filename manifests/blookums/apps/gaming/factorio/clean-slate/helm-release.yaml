@@ -9,7 +9,6 @@ spec:
   interval: 60m
   chart:
     spec:
-      # renovate: registryUrl=https://sqljames.github.io/factorio-server-charts
       chart: factorio-server-charts
       version: 1.2.5
       sourceRef:
