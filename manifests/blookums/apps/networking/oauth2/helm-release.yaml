@@ -9,7 +9,6 @@ spec:
   interval: 10m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: oauth2-proxy
       version: 6.16.1
       sourceRef:

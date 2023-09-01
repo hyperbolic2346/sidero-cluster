@@ -11,7 +11,6 @@ spec:
   interval: 10m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: zwavejs2mqtt
       version: 5.4.2
       sourceRef:

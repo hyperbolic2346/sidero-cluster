@@ -9,7 +9,6 @@ spec:
   interval: 10m
   chart:
     spec:
-      # renovate: registryUrl=https://github.com/grownseed/valheim-helm.git
       chart: .
       sourceRef:
         kind: GitRepository

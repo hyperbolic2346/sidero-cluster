@@ -12,7 +12,6 @@ spec:
       namespace: rook-ceph
   chart:
     spec:
-      # renovate: registryUrl=https://nextcloud.github.io/helm/
       chart: nextcloud
       version: 4.1.0
       sourceRef:

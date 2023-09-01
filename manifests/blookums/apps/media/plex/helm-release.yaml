@@ -11,7 +11,6 @@ spec:
       namespace: rook-ceph
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: plex
       version: 6.4.3
       sourceRef:
