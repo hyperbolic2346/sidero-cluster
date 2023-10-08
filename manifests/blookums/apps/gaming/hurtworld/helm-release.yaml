@@ -1,0 +1,58 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hurtworld
+  namespace: games
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://bjw-s.github.io/helm-charts
+      chart: app-template
+      version: 2.0.3
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: ghcr.io/gameservermanagers/gameserver
+              pullPolicy: IfNotPresent
+              tag: hw
+    persistence:
+      data:
+        enabled: true
+        type: pvc
+        accessMode: ReadWriteOnce
+        size: 20Gi
+        mountPath: /data
+        storageClass: ceph-ssd-xfs
+      instance-config:
+        enabled: true
+        type: secret
+        name: hurtworld
+        subPath: instance.cfg
+        mountPath: /data/config-lgsm/insserver/instance.cfg
+        readOnly: true
+    defaultPodOptions:
+      securityContext:
+        fsGroup: 1000 # linuxgsm group
+    service:
+      main:
+        type: LoadBalancer
+        ports:
+          http:
+            enabled: false
+          query:
+            primary: true # Used for probes
+            port: 12881
+            protocol: TCP
+          game:
+            port: 12871
+            protocol: UDP
