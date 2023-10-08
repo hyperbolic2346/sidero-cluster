@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ark
   - factorio
+  - hurtworld
   - minecraft
   - sandstorm
   - valheim
