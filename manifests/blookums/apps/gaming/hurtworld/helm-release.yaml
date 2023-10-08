@@ -60,9 +60,6 @@ spec:
             primary: true # Used for probes
             port: 12881
             protocol: UDP
-          gameudp:
+          game:
             port: 12871
             protocol: UDP
-          gametcp:
-            port: 12871
-            protocol: TCP
