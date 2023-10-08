@@ -71,6 +71,3 @@ spec:
             port: 27102
             protocol: UDP
         type: LoadBalancer
-
-
- 
