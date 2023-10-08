@@ -31,6 +31,7 @@ spec:
       main:
         containers:
           main:
+            strategy: Recreate
             image:
               repository: ghcr.io/blakeblackshear/frigate
               tag: 0.12.1
