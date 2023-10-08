@@ -59,7 +59,10 @@ spec:
           query:
             primary: true # Used for probes
             port: 12881
-            protocol: TCP
-          game:
+            protocol: UDP
+          gameudp:
             port: 12871
             protocol: UDP
+          gametcp:
+            port: 12871
+            protocol: TCP
