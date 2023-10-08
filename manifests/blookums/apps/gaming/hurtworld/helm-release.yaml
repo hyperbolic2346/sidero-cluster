@@ -27,11 +27,11 @@ spec:
               tag: hw
             probes:
               startup:
-                spec:
-                  initialDelaySeconds: 0
-                  periodSeconds: 10
-                  timeoutSeconds: 1
-                  failureThreshold: 100
+                enabled: false
+              liveness:
+                enabled: false
+              readiness:
+                enabled: false
     persistence:
       data:
         enabled: true
