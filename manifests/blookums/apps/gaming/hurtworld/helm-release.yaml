@@ -25,6 +25,13 @@ spec:
               repository: ghcr.io/gameservermanagers/gameserver
               pullPolicy: IfNotPresent
               tag: hw
+            probes:
+              startup:
+                spec:
+                  initialDelaySeconds: 0
+                  periodSeconds: 10
+                  timeoutSeconds: 1
+                  failureThreshold: 100
     persistence:
       data:
         enabled: true
