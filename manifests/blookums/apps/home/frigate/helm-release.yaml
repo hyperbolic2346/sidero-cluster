@@ -87,10 +87,10 @@ spec:
       config-file:
         type: configMap
         name: frigate-configmap
-        subPath: config.yaml
-        readOnly: true
         globalMounts:
           - path: /config/config.yml
+            subPath: config.yaml
+            readOnly: true
       data:
         type: persistentVolumeClaim
         storageClass: ceph-hdd-xfs
