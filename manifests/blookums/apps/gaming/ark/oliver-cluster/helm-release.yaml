@@ -89,6 +89,7 @@ spec:
       - '2007430597'
       - '2007418454'
       - '2007411835'
+      - '749466101'
 
     # Set RCON password for the whole cluster
     rcon:
@@ -154,7 +155,7 @@ spec:
             BabyCuddleGracePeriodMultiplier=10.0
             bAutoUnlockAllEngrams=True
             UseCorpseLifeSpanMultiplier=4.0
-            ActiveMods=543394681,2724167243,1967741708,731604991,1404697612,2007400172,2007461356,2007447056,2007441758,2007430597,2007418454,2007411835
+            ActiveMods=543394681,2724167243,1967741708,731604991,1404697612,2007400172,2007461356,2007447056,2007441758,2007430597,2007418454,2007411835,749466101
           GameUserSettingsIni: |
             [/Script/ShooterGame.ShooterGameUserSettings]
             Version=5
@@ -232,7 +233,7 @@ spec:
             BabyCuddleGracePeriodMultiplier=10.0
             bAutoUnlockAllEngrams=True
             UseCorpseLifeSpanMultiplier=2.0
-            ActiveMods=543394681,2724167243,1967741708,731604991,1404697612,2007400172,2007461356,2007447056,2007441758,2007430597,2007418454,2007411835
+            ActiveMods=543394681,2724167243,1967741708,731604991,1404697612,2007400172,2007461356,2007447056,2007441758,2007430597,2007418454,2007411835,749466101
           GameUserSettingsIni: |
             [/Script/ShooterGame.ShooterGameUserSettings]
             Version=5
