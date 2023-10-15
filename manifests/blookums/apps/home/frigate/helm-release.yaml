@@ -85,6 +85,7 @@ spec:
             secretName: frigate.cert
     persistence:
       config-file:
+        enabled: true
         type: configMap
         name: frigate-configmap
         subPath: config.yaml
@@ -92,21 +93,25 @@ spec:
         globalMounts:
           - path: /config/config.yml
       data:
+        enabled: true
         type: persistentVolumeClaim
         storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         size: 2Ti
         retain: true
       media:
+        enabled: true
         type: persistentVolumeClaim
         storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         size: 20Ti
         retain: true
       usb:
+        enabled: true
         type: hostPath
         hostPath: /dev/bus/usb
       cache:
+        enabled: true
         type: emptyDir
         medium: Memory
         sizeLimit: 4Gi
