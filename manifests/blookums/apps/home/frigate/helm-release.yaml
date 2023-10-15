@@ -92,13 +92,17 @@ spec:
         globalMounts:
           - path: /config/config.yml
       data:
+        type: persistentVolumeClaim
         storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         size: 2Ti
+        retain: true
       media:
+        type: persistentVolumeClaim
         storageClass: ceph-hdd-xfs
         accessMode: ReadWriteOnce
         size: 20Ti
+        retain: true
       usb:
         type: hostPath
         hostPath: /dev/bus/usb
