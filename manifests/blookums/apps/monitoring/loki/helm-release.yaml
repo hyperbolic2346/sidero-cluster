@@ -25,8 +25,8 @@ spec:
         common:
           path_prefix: /var/loki
           replication_factor: 3
-          storage:
-            type: filesystem
+        storage:
+          type: filesystem
     write:
       persistence:
         storageClass: ceph-hdd-xfs
