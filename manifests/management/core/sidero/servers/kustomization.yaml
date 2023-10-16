@@ -7,6 +7,6 @@ resources:
   - dogbert.yaml
   - phil.yaml
   # - thing1.yaml
-  # - thing2.yaml
+  - thing2.yaml
   - wally.yaml
   - work-pc.yaml
