@@ -1,15 +1,15 @@
 ---
-apiVersion: metal.sidero.dev/v1alpha1
+apiVersion: metal.sidero.dev/v1alpha2
 kind: ServerClass
 metadata:
   name: defaults
 spec:
   configPatches:
-    - op: add
-      path: /machine/kubelet/extraArgs
-      value:
-        rotate-server-certificates: true
-    - op: add
-      path: /machine
-      value:
-        pxeBootAlways: true
+  - op: add
+    path: /machine/kubelet/extraArgs
+    value:
+      rotate-server-certificates: true
+  - op: add
+    path: /machine
+    value:
+      pxeBootAlways: true
