@@ -1,37 +1,43 @@
 ---
-apiVersion: metal.sidero.dev/v1alpha1
+apiVersion: metal.sidero.dev/v1alpha2
 kind: Server
 metadata:
-  name: 4c4c4544-004b-5710-8043-b4c04f433432
   labels:
-    worker-node: 'true'
+    worker-node: "true"
+  name: 4c4c4544-004b-5710-8043-b4c04f433432
 spec:
-  pxeBootAlways: true
   accepted: true
   bmc:
     endpoint: 10.0.15.16
-    user: sidero
     pass: ${SECRET_WALLY_IPMI_PASSWORD}
-  cpu:
-    manufacturer: Intel
-    version: Intel(R) Xeon(R) CPU E5-2623 v3 @ 3.00GHz
-  hostname: wally
-  system:
-    manufacturer: Dell Inc.
-    productName: PowerEdge R530
-    version: 4KWCC42
+    user: sidero
   configPatches:
-    - op: replace
-      path: /machine/install/disk
-      value: /dev/sde
-    - op: add
-      path: /machine/network
-      value:
-        interfaces:
-          - deviceSelector:
-              hardwareAddr: e4:1d:2d:2c:84:e0
-            dhcp: true
-    - op: add
-      path: /machine/sysctls
-      value:
-        vm.nr_hugepages: 1024
+  - op: replace
+    path: /machine/install/disk
+    value: /dev/sde
+  - op: add
+    path: /machine/network
+    value:
+      interfaces:
+      - deviceSelector:
+          hardwareAddr: e4:1d:2d:2c:84:e0
+        dhcp: true
+  - op: add
+    path: /machine/sysctls
+    value:
+      vm.nr_hugepages: 1024
+  hardware:
+    compute:
+      processors:
+      - manufacturer: Intel
+        productName: Intel(R) Xeon(R) CPU E5-2623 v3 @ 3.00GHz
+    system:
+      family: Unknown
+      manufacturer: Dell Inc.
+      productName: PowerEdge R530
+      serialNumber: SKU=NotProvided;ModelName=PowerEdge R530
+      skuNumber: Unknown
+      version: 4KWCC42
+  hostname: wally
+  pxeBootAlways: true
+

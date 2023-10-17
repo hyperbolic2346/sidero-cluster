@@ -1,41 +1,46 @@
 ---
-apiVersion: metal.sidero.dev/v1alpha1
+apiVersion: metal.sidero.dev/v1alpha2
 kind: Server
 metadata:
   labels:
-    master-node: 'true'
+    master-node: "true"
   name: 44454c4c-3700-1058-8030-c4c04f465131
 spec:
-  pxeBootAlways: true
   accepted: true
-  cpu:
-    manufacturer: Intel
-    version: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
-  hostname: work-pc
-  system:
-    manufacturer: Dell Inc.
-    productName: SPrecision WorkStation T3500
-    version: D7X0FQ1
   configPatches:
-    - op: replace
-      path: /machine/install/disk
-      value: /dev/sdb
-    - op: add
-      path: /machine/network
-      value:
-        interfaces:
-          - interface: eth0
-            dhcp: true
-            vip:
-              ip: 10.0.14.5
-    - op: replace
-      path: /machine/certSANs
-      value:
-        - 10.0.14.5
-    - op: add
-      path: /cluster/allowSchedulingOnControlPlanes
-      value: true
-    - op: add
-      path: /machine/sysctls
-      value:
-        vm.nr_hugepages: 1024
+  - op: replace
+    path: /machine/install/disk
+    value: /dev/sdb
+  - op: add
+    path: /machine/network
+    value:
+      interfaces:
+      - dhcp: true
+        interface: eth0
+        vip:
+          ip: 10.0.14.5
+  - op: replace
+    path: /machine/certSANs
+    value:
+    - 10.0.14.5
+  - op: add
+    path: /cluster/allowSchedulingOnControlPlanes
+    value: true
+  - op: add
+    path: /machine/sysctls
+    value:
+      vm.nr_hugepages: 1024
+  hardware:
+    compute:
+      processors:
+      - manufacturer: Intel
+        productName: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+    system:
+      family: Unknown
+      manufacturer: Dell Inc.
+      productName: SPrecision WorkStation T3500
+      serialNumber: Unknown
+      skuNumber: Unknown
+      version: D7X0FQ1
+  hostname: work-pc
+  pxeBootAlways: true

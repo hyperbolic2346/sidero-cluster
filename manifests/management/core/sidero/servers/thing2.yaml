@@ -1,35 +1,37 @@
 ---
-apiVersion: metal.sidero.dev/v1alpha1
+apiVersion: metal.sidero.dev/v1alpha2
 kind: Server
 metadata:
   labels:
-    worker-node: 'true'
+    worker-node: "true"
   name: 00000000-0000-0000-0000-0cc47a52b624
 spec:
-  pxeBootAlways: true
   accepted: true
   bmc:
     endpoint: 10.0.15.10
-  cpu:
-    manufacturer: Intel
-    version: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
-  hostname: thing2
-  system:
-    manufacturer: Supermicro
-    productName: SYS-628TR-DTR-02-LC019
-    serialNumber: S178810X5626992
   configPatches:
-    - op: replace
-      path: /machine/install/disk
-      value: /dev/sda
-    - op: add
-      path: /machine/network
-      value:
-        interfaces:
-          - deviceSelector:
-              hardwareAddr: e4:1d:2d:2b:61:30
-            dhcp: true
-    - op: add
-      path: /machine/sysctls
-      value:
-        vm.nr_hugepages: 1024
+  - op: replace
+    path: /machine/install/disk
+    value: /dev/sda
+  - op: add
+    path: /machine/network
+    value:
+      interfaces:
+      - deviceSelector:
+          hardwareAddr: e4:1d:2d:2b:61:30
+        dhcp: true
+  - op: add
+    path: /machine/sysctls
+    value:
+      vm.nr_hugepages: 1024
+  hardware:
+    compute:
+      processors:
+      - manufacturer: Intel
+        productName: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+    system:
+      manufacturer: Supermicro
+      productName: SYS-628TR-DTR-02-LC019
+      serialNumber: S178810X5626992
+  hostname: thing2
+  pxeBootAlways: true

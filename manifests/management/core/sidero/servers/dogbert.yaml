@@ -1,36 +1,43 @@
 ---
-apiVersion: metal.sidero.dev/v1alpha1
+apiVersion: metal.sidero.dev/v1alpha2
 kind: Server
 metadata:
-  name: 00000000-0000-0000-0000-ac1f6b0a4b72
   labels:
-    worker-node: 'true'
+    worker-node: "true"
+  name: 00000000-0000-0000-0000-ac1f6b0a4b72
 spec:
-  pxeBootAlways: true
   accepted: true
   bmc:
     endpoint: 10.0.15.13
-    user: sidero
     pass: ${SECRET_DOGBERT_IPMI_PASSWORD}
-  cpu:
-    manufacturer: Intel
-    version: Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz
-  hostname: dogbert
-  system:
-    manufacturer: Supermicro
-    productName: Super Server
+    user: sidero
   configPatches:
-    - op: replace
-      path: /machine/install/disk
-      value: /dev/nvme0n1
-    - op: add
-      path: /machine/network
-      value:
-        interfaces:
-          - deviceSelector:
-              hardwareAddr: ac:1f:6b:0a:4b:72
-            dhcp: true
-    - op: add
-      path: /machine/sysctls
-      value:
-        vm.nr_hugepages: 1024
+  - op: replace
+    path: /machine/install/disk
+    value: /dev/nvme0n1
+  - op: add
+    path: /machine/network
+    value:
+      interfaces:
+      - deviceSelector:
+          hardwareAddr: ac:1f:6b:0a:4b:72
+        dhcp: true
+  - op: add
+    path: /machine/sysctls
+    value:
+      vm.nr_hugepages: 1024
+  hardware:
+    compute:
+      processors:
+      - manufacturer: Intel
+        productName: Intel(R) Xeon(R) Silver 4214 CPU @ 2.20GHz
+    system:
+      family: Unknown
+      manufacturer: Supermicro
+      productName: Super Server
+      serialNumber: "0123456789"
+      skuNumber: Unknown
+      version: "0123456789"
+  hostname: dogbert
+  pxeBootAlways: true
+
