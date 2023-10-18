@@ -35,7 +35,7 @@ spec:
       clusterName: blookums
     executors:
       kubectl-read-only:
-        kubectl:
+        botkube/kubectl:
           enabled: true
     serviceMonitor:
       enabled: true
