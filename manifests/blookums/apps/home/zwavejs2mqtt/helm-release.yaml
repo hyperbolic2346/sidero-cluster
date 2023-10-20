@@ -20,7 +20,7 @@ spec:
   values:
     image:
       repository: zwavejs/zwavejs2mqtt
-      tag: 9.2.2@sha256:ef07d5851a61ecdc61dec83349c17248f3ba27da346ddee8706f082674e49d8e
+      tag: 9.2.3@sha256:a353ed382efd47f6510174ee54a6a11e1c47b16df447547f2f86a57af9159e12
       pullPolicy: IfNotPresent
 
     service:
