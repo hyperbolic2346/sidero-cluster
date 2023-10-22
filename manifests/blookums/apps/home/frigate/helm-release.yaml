@@ -122,6 +122,6 @@ spec:
         # -- (bool) Privileged securityContext may be required if USB devices are accessed directly through the host machine
         privileged: true
       nodeSelector:
-        google.feature.node.kubernetes.io/coral: 'true'
+        tpu: 'google-coral'
       annotations:
         backup.velero.io/backup-volumes: config,media,data
