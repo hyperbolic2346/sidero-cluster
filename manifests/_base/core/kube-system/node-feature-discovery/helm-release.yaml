@@ -31,8 +31,14 @@ spec:
     worker:
       config:
         core:
-          sources: [custom, pci, usb]
+          labelsources: [custom, pci, usb]
         sources:
           usb:
             deviceClassWhitelist: ['02', '03', 0e, ef, fe, ff]
             deviceLabelFields: [class, vendor, device]
+          custom:
+            - name: "coral-tpu" # Coral TPU
+              matchOn:
+                - pciId:
+                    class: ["0880"]
+                    vendor: ["1ac1"]
