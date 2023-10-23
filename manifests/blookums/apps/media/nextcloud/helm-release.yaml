@@ -117,6 +117,8 @@ spec:
       enabled: false
     postgresql:
       enabled: true
+      image:
+        tag: 16.0.0-debian-11-r13
       global:
         postgresql:
           auth:
