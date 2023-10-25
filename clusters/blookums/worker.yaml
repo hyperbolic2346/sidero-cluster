@@ -20,6 +20,10 @@ spec:
   replicas: 2
   selector:
     matchLabels:
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
   template:
     spec:
       bootstrap:
