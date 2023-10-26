@@ -91,7 +91,7 @@ spec:
               pathType: Prefix
               service:
                 name: main
-                name: http
+                port: http
         tls:
         - hosts:
           - "brigman-gate.${SECRET_DOMAIN}"
