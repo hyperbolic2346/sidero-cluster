@@ -8,25 +8,74 @@ spec:
   dependsOn:
     - name: rook-ceph-cluster
       namespace: rook-ceph
-  interval: 10m
+  interval: 15m
   chart:
     spec:
-      chart: home-assistant
-      version: 13.4.2
+      chart: app-template
+      version: 2.0.3
+      interval: 15m
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s-charts
         namespace: flux-system
   values:
-    image:
-      repository: homeassistant/home-assistant
-      tag: 2023.10.5
-    persistence:
-      config:
-        enabled: true
-        size: 10Gi
-        storageClass: ceph-ssd-xfs
-        retain: true
+    defaultPodOptions:
+      annotations:
+        backup.velero.io/backup-volumes: config
+    controllers:
+      main:
+        strategy: Recreate
+        containers:
+          main:
+            image:
+              repository: homeassistant/home-assistant
+              tag: 2023.10.5@sha256:3b2810093b118a77c87f3639e51930ffb0f10e8af679ba8582843e9bbfdd5fa5
+            env:
+              TZ: "America/New_York"
+            resources:
+              limits:
+                memory: 2500Mi
+                hugepages-2Mi: 500Mi
+                cpu: 2000m
+              requests:
+                cpu: 500m
+                memory: 2000Mi
+                hugepages-2Mi: 500Mi
+          codeserver:
+            image:
+              repository: ghcr.io/coder/code-server
+              tag: 4.18.0@sha256:29267847d68332a28d249bd5235715402b144a3903b921da0a1962173aef10b1
+              pullPolicy: IfNotPresent
+            env:
+              TZ: "America/New_York"
+            workingDir: /config
+            args:
+              - --auth
+              - none
+              - --user-data-dir
+              - /config/.vscode
+              - --extensions-dir
+              - /config/.vscode
+              - --port
+              - "12321"
+            volumeMounts:
+            - name: config
+              mountPath: /config
+    service:
+      main:
+        type: ClusterIP
+        ports:
+          http:
+            port: 8123
+      codeserver:
+        type: ClusterIP
+        controller: main
+        ports:
+          http:
+            enabled: True
+            port: 12321
+            protocol: TCP
+            targetPort: 12321
     ingress:
       main:
         enabled: true
@@ -35,66 +84,41 @@ spec:
           kubernetes.io/ingress.class: nginx
           cert-manager.io/cluster-issuer: letsencrypt-production
           nginx.org/websocket-services: home-assistant
-        path: /
         hosts:
-          - host: brigman-gate.${SECRET_DOMAIN}
-            paths:
-              - path: /
-                pathType: Prefix
+        - host: "brigman-gate.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+              service:
+                name: main
+                name: http
         tls:
-          - secretName: brigman-gate-cert
-            hosts:
-              - brigman-gate.${SECRET_DOMAIN}
-    probes:
-      liveness:
-        enabled: true
-      readiness:
-        enabled: true
-    podAnnotations:
-      backup.velero.io/backup-volumes: config
-    resources:
-      limits:
-        memory: 2500Mi
-        hugepages-2Mi: 500Mi
-        cpu: 2000m
-      requests:
-        cpu: 500m
-        memory: 2000Mi
-        hugepages-2Mi: 500Mi
-    monitoring:
-      enabled: false
-    postgresql:
-      enabled: false
-    addons:
+        - hosts:
+          - "brigman-gate.${SECRET_DOMAIN}"
+          secretName: brigman-gate-cert
       codeserver:
         enabled: true
-        image:
-          repository: codercom/code-server
-          tag: 4.18.0
-        workingDir: /config
-        args:
-          - --auth
-          - none
-          - --user-data-dir
-          - /config/.vscode
-          - --extensions-dir
-          - /config/.vscode
-        ingress:
-          enabled: true
-          annotations:
-            kubernetes.io/tls-acme: 'true'
-            kubernetes.io/ingress.class: nginx
-            nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
-            nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
-            cert-manager.io/cluster-issuer: letsencrypt-production
-          hosts:
-            - host: brigman-hass-code.${SECRET_DOMAIN}
-              paths:
-                - path: /
-                  pathType: Prefix
-          tls:
-            - hosts:
-                - brigman-hass-code.${SECRET_DOMAIN}
-        volumeMounts:
-          - name: config
-            mountPath: /config
+        annotations:
+          kubernetes.io/tls-acme: 'true'
+          kubernetes.io/ingress.class: nginx
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
+        hosts:
+        - host: "brigman-hass-code.${SECRET_DOMAIN}"
+          paths:
+          - path: /
+            pathType: Prefix
+            service:
+              name: codeserver
+              port: http
+        tls:
+        - hosts:
+          - "brigman-hass-code.${SECRET_DOMAIN}"
+          secretName: brigman-gate-code-cert
+    persistence:
+      config:
+        enabled: true
+        size: 10Gi
+        storageClass: ceph-ssd-xfs
+        retain: true
