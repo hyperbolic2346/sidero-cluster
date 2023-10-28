@@ -6,4 +6,6 @@ bases:
 resources:
   - namespaces
   - rook-ceph
+  - snapshot-controller
   - velero
+  - volsync

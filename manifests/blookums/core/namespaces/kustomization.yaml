@@ -9,4 +9,5 @@ resources:
   - media.yaml
   - networking.yaml
   - oliver.yaml
+  - system.yaml
   - velero.yaml
