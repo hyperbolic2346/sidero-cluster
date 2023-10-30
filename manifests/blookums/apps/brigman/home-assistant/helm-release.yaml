@@ -107,11 +107,11 @@ spec:
         hosts:
           - host: "brigman-hass-code.${SECRET_DOMAIN}"
             paths:
-            - path: /
-              pathType: Prefix
-              service:
-                name: codeserver
-                port: http
+              - path: /
+                pathType: Prefix
+                service:
+                  name: codeserver
+                  port: http
         tls:
           - secretName: brigman-gate-code-cert
             hosts:
