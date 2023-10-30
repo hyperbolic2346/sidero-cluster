@@ -59,8 +59,8 @@ spec:
               - --port
               - "12321"
             volumeMounts:
-            - name: config
-              mountPath: /config
+              - name: config
+                mountPath: /config
     service:
       main:
         type: ClusterIP
@@ -72,7 +72,7 @@ spec:
         controller: main
         ports:
           http:
-            enabled: True
+            enabled: true
             port: 12321
             protocol: TCP
             targetPort: 12321
@@ -85,17 +85,17 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-production
           nginx.org/websocket-services: home-assistant
         hosts:
-        - host: "brigman-gate.${SECRET_DOMAIN}"
-          paths:
-            - path: /
-              pathType: Prefix
-              service:
-                name: main
-                port: http
+          - host: "brigman-gate.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: main
+                  port: http
         tls:
-        - hosts:
-          - "brigman-gate.${SECRET_DOMAIN}"
-          secretName: brigman-gate-cert
+          - hosts:
+            - "brigman-gate.${SECRET_DOMAIN}"
+            secretName: brigman-gate-cert
       codeserver:
         enabled: true
         annotations:
@@ -105,17 +105,17 @@ spec:
           nginx.ingress.kubernetes.io/auth-url: http://oauth2-proxy.networking.svc.cluster.local/oauth2/auth
           nginx.ingress.kubernetes.io/auth-signin: ${SECRET_AUTH_URL}
         hosts:
-        - host: "brigman-hass-code.${SECRET_DOMAIN}"
-          paths:
-          - path: /
-            pathType: Prefix
-            service:
-              name: codeserver
-              port: http
+          - host: "brigman-hass-code.${SECRET_DOMAIN}"
+            paths:
+            - path: /
+              pathType: Prefix
+              service:
+                name: codeserver
+                port: http
         tls:
-        - hosts:
-          - "brigman-hass-code.${SECRET_DOMAIN}"
-          secretName: brigman-gate-code-cert
+          - hosts:
+            - "brigman-hass-code.${SECRET_DOMAIN}"
+            secretName: brigman-gate-code-cert
     persistence:
       config:
         enabled: true
