@@ -93,9 +93,9 @@ spec:
                   name: main
                   port: http
         tls:
-          - hosts:
-            - "brigman-gate.${SECRET_DOMAIN}"
-            secretName: brigman-gate-cert
+          - secretName: brigman-gate-cert
+            hosts:
+              - "brigman-gate.${SECRET_DOMAIN}"
       codeserver:
         enabled: true
         annotations:
@@ -113,9 +113,9 @@ spec:
                 name: codeserver
                 port: http
         tls:
-          - hosts:
-            - "brigman-hass-code.${SECRET_DOMAIN}"
-            secretName: brigman-gate-code-cert
+          - secretName: brigman-gate-code-cert
+            hosts:
+              - "brigman-hass-code.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
