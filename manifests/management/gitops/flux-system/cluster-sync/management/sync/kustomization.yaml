@@ -6,5 +6,5 @@ resources:
   - core.yaml
   - crds.yaml
   - gitops.yaml
-  - metallb-config.ymal
+  - metallb-config.yaml
   - metallb.yaml
