@@ -1,0 +1,25 @@
+---
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: bgp-peers
+  namespace: networking
+spec:
+  myASN: ${SECRET_NETWORK_BGP_ASN}
+  peerASN: ${SECRET_NETWORK_BGP_PEER_ASN}
+  peerAddress: ${SECRET_NETWORK_BGP_PEER}
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: cluster
+  namespace: networking
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: cluster-pool
+  namespace: networking
+spec:
+  addresses:
+    - ${SECRET_NETWORK_BGP_POOL}

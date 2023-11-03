@@ -9,7 +9,3 @@ spec:
     path: /machine/kubelet/extraArgs
     value:
       rotate-server-certificates: true
-  - op: add
-    path: /machine
-    value:
-      pxeBootAlways: true
